@@ -475,8 +475,6 @@ struct DPP_EXPORT interaction_create_t : public event_dispatch_t {
 
 	/**
 	 * @brief Get a command line parameter
-	 *
-	 * @note Doesn't work on subcommands. If you want to get a parameter from a subcommand, you have to loop through the options by yourself.
 	 * 
 	 * @param name The command line parameter to retrieve
 	 * @return const command_value& If the command line parameter does not 
@@ -511,15 +509,20 @@ public:
  * @brief Click on button
  */
 struct DPP_EXPORT button_click_t : public interaction_create_t {
-private:
-	using interaction_create_t::get_parameter;
-public:
+
 	/** Constructor
 	 * @param client The shard the event originated on
 	 * @param raw Raw event text as JSON
 	 */
 	button_click_t(class discord_client* client, const std::string& raw);
 
+	/**
+	 * @brief Get a command line parameter
+	 * 
+	 * @param name The command line parameter to retrieve
+	 * @return Always returns an empty parameter as buttons dont have parameters!
+	 */
+	const virtual command_value& get_parameter(const std::string& name) const;
 	/**
 	 * @brief button custom id
 	 */
@@ -531,15 +534,19 @@ public:
 };
 
 struct DPP_EXPORT form_submit_t : public interaction_create_t {
-private:
-	using interaction_create_t::get_parameter;
-public:
 	/** Constructor
 	 * @param client The shard the event originated on
 	 * @param raw Raw event text as JSON
 	 */
 	form_submit_t(class discord_client* client, const std::string& raw);
 
+	/**
+	 * @brief Get a command line parameter
+	 * 
+	 * @param name The command line parameter to retrieve
+	 * @return Always returns an empty parameter as buttons dont have parameters!
+	 */
+	const virtual command_value& get_parameter(const std::string& name) const;
 	/**
 	 * @brief button custom id
 	 */
@@ -554,15 +561,20 @@ public:
  * @brief Discord requests that we fill a list of auto completion choices for a command option
  */
 struct DPP_EXPORT autocomplete_t : public interaction_create_t {
-private:
-	using interaction_create_t::get_parameter;
-public:
 
 	/** Constructor
 	 * @param client The shard the event originated on
 	 * @param raw Raw event text as JSON
 	 */
 	autocomplete_t(class discord_client* client, const std::string& raw);
+
+	/**
+	 * @brief Get a command line parameter
+	 * 
+	 * @param name The command line parameter to retrieve
+	 * @return Always returns an empty parameter as auto complete requests dont have parameters!
+	 */
+	const virtual command_value& get_parameter(const std::string& name) const;
 
 	/**
 	 * @brief Command ID
@@ -662,15 +674,20 @@ public:
  * @brief Click on select
  */
 struct DPP_EXPORT select_click_t : public interaction_create_t {
-private:
-	using interaction_create_t::get_parameter;
-public:
 
 	/** Constructor
 	 * @param client The shard the event originated on
 	 * @param raw Raw event text as JSON
 	 */
 	select_click_t(class discord_client* client, const std::string& raw);
+
+	/**
+	 * @brief Get a command line parameter
+	 * 
+	 * @param name The command line parameter to retrieve
+	 * @return Always returns an empty parameter as buttons dont have parameters!
+	 */
+	const virtual command_value& get_parameter(const std::string& name) const;
 
 	/**
 	 * @brief select menu custom id
