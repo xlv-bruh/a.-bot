@@ -24,16 +24,14 @@
 
 namespace dpp {
 
-	/** @brief Supported image types for profile pictures and CDN endpoints */
+	/** @brief Supported image types for profile pictures */
 	enum image_type {
 		/// image/png
 		i_png,
 		/// image/jpeg
 		i_jpg,
 		/// image/gif
-		i_gif,
-		/// WebP
-		i_webp,
+		i_gif
 	};
 
 	/** @brief Log levels */
