@@ -48,15 +48,15 @@ namespace dpp {
 	template<> struct fnv1a_hash<snowflake> {
 		uint64_t operator()(const snowflake& data) const {
 			auto new_value = static_cast<uint64_t>(data);
-			return internalHashFunction(reinterpret_cast<const uint8_t*>(&new_value), sizeof(new_value));
+			return internal_hash_function(reinterpret_cast<const uint8_t*>(&new_value), sizeof(new_value));
 		}
 
 		uint64_t operator()(snowflake&& data) const {
 			auto new_value = static_cast<uint64_t>(data);
-			return internalHashFunction(reinterpret_cast<const uint8_t*>(&new_value), sizeof(new_value));
+			return internal_hash_function(reinterpret_cast<const uint8_t*>(&new_value), sizeof(new_value));
 		}
 
-		size_t internalHashFunction(const uint8_t* value, size_t count) const {
+		size_t internal_hash_function(const uint8_t* value, size_t count) const {
 			auto hash = 14695981039346656037;
 			for (size_t x = 0; x < count; ++x) {
 				hash ^= value[x];
