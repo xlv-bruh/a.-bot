@@ -88,7 +88,7 @@ namespace dpp {
 		* Caches must contain classes derived from dpp::managed.
 		*/
 		cache() {
-			cache_map = std::make_unique<unordered_set<T*, snowflake>>();
+			cache_map = std::make_unique<unordered_set<snowflake, T*>>();
 		}
 
 		/**
@@ -108,7 +108,7 @@ namespace dpp {
 		 *
 		 * @param object object to store. Storing a pointer to the cache relinquishes ownership to the cache object.
 		 */
-		constexpr void store(value_type object) {
+		 void store(value_type object) {
 			std::unique_lock lock(cache_mutex);
 			cache_map->emplace(std::forward<value_type>(object));
 		}
@@ -124,7 +124,7 @@ namespace dpp {
 		 *
 		 * @param object object to remove. Passing a nullptr will have no effect.
 		 */
-		constexpr void remove(key_type key) {
+		 void remove(key_type key) {
 			std::unique_lock lock(cache_mutex);
 			if (cache_map->contains(key)) {
 				cache_map->erase(key);
@@ -144,7 +144,7 @@ namespace dpp {
 		 * @param id Object snowflake id to find
 		 * @return Found object or nullptr if the object with this id does not exist.
 		 */
-		constexpr value_type find(key_type key) {
+		 value_type find(key_type key) {
 			std::shared_lock lock(cache_mutex);
 			if (cache_map->contains(key)) {
 				return *cache_map->find(key);
@@ -160,7 +160,7 @@ namespace dpp {
 		 * get
 		 * @return uint64_t count of items in the cache
 		 */
-		constexpr uint64_t count() {
+		 uint64_t count() {
 			std::shared_lock lock(cache_mutex);
 			return cache_map->size();
 		}
@@ -224,7 +224,7 @@ namespace dpp {
 		 */
 		void rehash() {
 			std::unique_lock l(cache_mutex);
-			unordered_set<value_type, key_type>* n = new unordered_set<value_type, key_type>{};
+			unordered_set<snowflake, T*>* n = new unordered_set<snowflake, T*>{};
 			n->reserve(cache_map->size());
 			for (auto t = cache_map->begin(); t != cache_map->end(); ++t) {
 				n->emplace(std::move(*t));
@@ -254,7 +254,7 @@ namespace dpp {
 		};
 
 	protected:
-		std::unique_ptr<unordered_set<value_type,key_type>> cache_map{};
+		std::unique_ptr<unordered_set<key_type, value_type>> cache_map{};
 		std::shared_mutex cache_mutex{};
 	};
 
