@@ -22,10 +22,12 @@
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(_WIN64)
 #include <memory_resource>
-#elif __APPLE__
+#define ALLOCATOR(T) std::pmr::polymorphic_allocator<T>
+#elif defined(__APPLE__) 
+#define ALLOCATOR(T) std::allocator<T>
+#elif defined(__linux__)
 #include <experimental/memory_resource>
-#elif __linux__
-#include <experimental/memory_resource>
+#define ALLOCATOR(T) std::pmr::polymorphic_allocator<T>
 #endif
 
 #include <shared_mutex>
@@ -165,7 +167,7 @@ namespace dpp {
 			value_type object{};
 		};
 
-		using sentinel_allocator = std::pmr::polymorphic_allocator<sentinel_holder>;
+		using sentinel_allocator = ALLOCATOR(sentinel_holder);
 
 		inline memory_core(size_type new_capacity) : capacity(new_capacity), size(0), data(allocator.allocate(new_capacity)) {
 			for (size_t x = 0; x < new_capacity; ++x) {
