@@ -23,11 +23,8 @@
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(_WIN64)
 #include <memory_resource>
 #define ALLOCATOR(T) std::pmr::polymorphic_allocator<T>
-#elif defined(__APPLE__) 
+#elif defined(__APPLE__) || defined(__linux)
 #define ALLOCATOR(T) std::allocator<T>
-#elif defined(__linux__)
-#include <experimental/memory_resource>
-#define ALLOCATOR(T) std::pmr::polymorphic_allocator<T>
 #endif
 
 #include <shared_mutex>
