@@ -767,14 +767,6 @@ struct DPP_EXPORT reaction {
 };
 
 /**
- * @brief Bitmask flags for a dpp::attachment
- */
-enum attachment_flags : uint8_t {
-	/// this attachment has been edited using the remix feature on mobile
-	a_is_remix = 1 << 2,
-};
-
-/**
  * @brief Represents an attachment in a dpp::message
  */
 struct DPP_EXPORT attachment {
@@ -802,8 +794,6 @@ struct DPP_EXPORT attachment {
 	double duration_secs;
 	/** base64 encoded bytearray representing a sampled waveform (currently for voice messages) */
 	std::string waveform;
-	/** Flags. Made of bits in dpp::attachment_flags */
-	uint8_t		flags;
 	/** Owning message */
 	struct message* owner;
 
@@ -811,7 +801,7 @@ struct DPP_EXPORT attachment {
 	 * @brief Constructs a new attachment object.
 	 * @param o Owning dpp::message object
 	 */
-	attachment(struct message* o = nullptr);
+	attachment(struct message* o);
 
 	/**
 	 * @brief Constructs a new attachment object from a JSON object.
@@ -834,13 +824,6 @@ struct DPP_EXPORT attachment {
 	 * itself has an owning cluster, this method will throw a dpp::logic_exception when called.
 	 */
 	void download(http_completion_event callback) const;
-	
-	/**
-	 * @brief Returns true if remixed
-	 * 
-	 * @return true if remixed
-	 */
-	bool is_remix() const;
 };
 
 /**
@@ -1540,13 +1523,6 @@ struct DPP_EXPORT message : public managed {
 	 * @return true if message is a DM
 	 */
 	bool is_dm() const;
-
-	/**
-	 * @brief Returns true if any of attachments is remixed
-	 * 
-	 * @return true if any of attachments is remixed
-	 */
-	bool is_remix() const;
 };
 
 /** A group of messages */
