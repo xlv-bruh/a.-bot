@@ -348,6 +348,16 @@ public:
 	 */
 	bool stop_timer(timer t);
 
+#ifdef DPP_CORO
+	/**
+	 * @brief Start a one-time timer. Use the co_await keyword on its return value to suspend the coroutine until the timer ends
+	 * 
+	 * @param seconds How long to run the timer for
+	 * @return awaitable<timer> co_await-able object holding the timer_handle
+	 */
+	awaitable<timer> co_timer(uint64_t seconds);
+#endif
+
 	/**
 	 * @brief Get the dm channel for a user id
 	 *
@@ -3143,7 +3153,7 @@ public:
 	 * @brief Get public archived threads in a channel (Sorted by archive_timestamp in descending order)
 	 * @see https://discord.com/developers/docs/resources/channel#list-public-archived-threads
 	 * @param channel_id Channel to get public archived threads for
-	 * @param before_timestamp Get threads before this timestamp
+	 * @param before_timestamp Get threads archived before this timestamp
 	 * @param limit Number of threads to get
 	 * @param callback Function to call when the API call completes
 	 * On success the callback will contain a dpp::thread_map object in confirmation_callback_t::value. On failure, the value is undefined and confirmation_callback_t::is_error() method will return true. You can obtain full error details with confirmation_callback_t::get_error().
@@ -3154,7 +3164,7 @@ public:
 	 * @brief Get private archived threads in a channel (Sorted by archive_timestamp in descending order)
 	 * @see https://discord.com/developers/docs/resources/channel#list-private-archived-threads
 	 * @param channel_id Channel to get public archived threads for
-	 * @param before_timestamp Get threads before this timestamp
+	 * @param before_timestamp Get threads archived before this timestamp
 	 * @param limit Number of threads to get
 	 * @param callback Function to call when the API call completes
 	 * On success the callback will contain a dpp::thread_map object in confirmation_callback_t::value. On failure, the value is undefined and confirmation_callback_t::is_error() method will return true. You can obtain full error details with confirmation_callback_t::get_error().
