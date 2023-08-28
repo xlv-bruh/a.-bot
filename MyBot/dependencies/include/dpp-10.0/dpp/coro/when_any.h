@@ -120,7 +120,7 @@ concept void_result = std::same_as<T, empty>;
 /**
  * @brief Experimental class to co_await on a bunch of awaitable objects, resuming when the first one completes.
  * On completion, returns a `result` object that contains the index of the awaitable that finished first.
- * A user can call get<N> on the result object to get the result, similar to std::variant.
+ * A user can call `get<N>()` on the result object to get the result, similar to std::variant.
  *
  * @see when_any::result
  * @tparam Args... Type of each awaitable to await on

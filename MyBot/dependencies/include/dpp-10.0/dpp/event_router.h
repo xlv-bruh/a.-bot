@@ -399,11 +399,13 @@ public:
 	 *
 	 * Example
 	 * ```cpp
-	 * // assuming in a coroutine, with an accessible dpp::cluster* c
+	 * dpp::job my_handler(dpp::slashcommand_t event) {
+	 *	co_await event.co_reply(dpp::message().add_component(dpp::component().add_component().set_label("click me!").set_id("test")));
 	 *
-	 * message_create_t m = co_await c->on_message_create.with([](const message_create_t &event){ return event.starts_with("hello world!); });
+	 *	button_click_t b = co_await c->on_button_click.with([](const button_click_t &event){ return event.custom_id == "test"; });
 	 *
-	 * // do something with m
+	 *	// do something on button click
+	 * }
 	 * ```
 	 *
 	 * This can be combined with `dpp::when_any` and other awaitables, for example `dpp::cluster::co_sleep` to create expiring buttons.
@@ -429,11 +431,13 @@ public:
 	 *
 	 * Example
 	 * ```cpp
-	 * // assuming in a coroutine, with an accessible dpp::cluster* c
+	 * dpp::job my_handler(dpp::slashcommand_t event) {
+	 *	co_await event.co_reply(dpp::message().add_component(dpp::component().add_component().set_label("click me!").set_id("test")));
 	 *
-	 * message_create_t m = co_await c->on_message_create;
+	 *	button_click_t b = co_await c->on_message_create;
 	 *
-	 * // do something with m
+	 *	// do something on button click
+	 * }
 	 * ```
 	 *
 	 * This can be combined with `dpp::when_any` and other awaitables, for example `dpp::cluster::co_sleep` to create expiring buttons.
