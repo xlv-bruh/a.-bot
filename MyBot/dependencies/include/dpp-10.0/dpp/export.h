@@ -66,3 +66,9 @@
 
 	#include <WinSock2.h>
 #endif
+
+#ifdef DPP_CORO
+	#define DPP_DEPRECATED_WITH_CORO [[deprecated("sync methods are deprecated and will be removed in a future version. use coro methods instead")]]
+#else
+	#define DPP_DEPRECATED_WITH_CORO
+#endif
