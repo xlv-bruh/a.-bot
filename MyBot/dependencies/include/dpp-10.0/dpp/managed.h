@@ -36,49 +36,16 @@ namespace dpp {
 		 * This value contains a timestamp, worker ID, internal server ID, and an incrementing value.
 		 * Only the timestamp is relevant to us as useful metadata.
 		 */
-		snowflake id = {};
-
-		/**
-		 * @brief Constructor, initialises id to 0.
-		 */
-		constexpr managed() noexcept = default;
-
+		snowflake id;
 		/**
 		 * @brief Constructor, initialises ID
 		 * @param nid ID to set
 		 */
-		constexpr managed(const snowflake nid) noexcept : id{nid} {}
-
-		/**
-		 * @brief Copy constructor
-		 * @param rhs Object to copy
-		 */
-		constexpr managed(const managed &rhs) noexcept = default;
-
-		/**
-		 * @brief Move constructor
-		 *
-		 * Effectively equivalent to copy constructor
-		 * @param rhs Object to move from
-		 */
-		constexpr managed(managed &&rhs) noexcept = default;
-
+		managed(const snowflake nid = 0);
 		/**
 		 * @brief Destroy the managed object
 		 */
-		virtual ~managed() noexcept = default;
-
-		/**
-		 * @brief Copy assignment operator
-		 * @param rhs Object to copy
-		 */
-		constexpr managed &operator=(const managed& rhs) noexcept = default;
-
-		/**
-		 * @brief Move assignment operator
-		 * @param rhs Object to move from
-		 */
-		constexpr managed &operator=(managed&& rhs) noexcept = default;
+		virtual ~managed() = default;
 
 		/**
 		 * @brief Get the creation time of this object according to Discord.
@@ -86,9 +53,7 @@ namespace dpp {
 		 * @return double creation time inferred from the snowflake ID.
 		 * The minimum possible value is the first second of 2015.
 		 */
-		constexpr double get_creation_time() const noexcept {
-			return id.get_creation_time();
-		};
+		double get_creation_time() const;
 
 		/**
 		 * @brief Comparison operator for comparing two managed objects by id
@@ -97,9 +62,7 @@ namespace dpp {
 		 * @return true objects are the same id
 		 * @return false objects are not the same id
 		 */
-		constexpr bool operator==(const managed& other) const noexcept {
-			return id == other.id;
-		}
+		bool operator==(const managed& other) const noexcept;
 
 		/**
 		 * @brief Comparison operator for comparing two managed objects by id
@@ -108,9 +71,7 @@ namespace dpp {
 		 * @return true objects are not the same id
 		 * @return false objects are the same id
 		 */
-		constexpr bool operator!=(const managed& other) const noexcept {
-			return id != other.id;
-		}
+		bool operator!=(const managed& other) const noexcept;
 	};
 
 } // namespace dpp

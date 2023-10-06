@@ -44,6 +44,8 @@
 #include <shared_mutex>
 #include <cstring>
 
+using  json = nlohmann::json;
+
 namespace dpp {
 
 #ifdef _WIN32

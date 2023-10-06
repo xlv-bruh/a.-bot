@@ -36,6 +36,8 @@
 #include <dpp/exception.h>
 #include <dpp/coro/job.h>
 
+using  json = nlohmann::json;
+
 namespace dpp {
 
 #ifdef DPP_CORO
