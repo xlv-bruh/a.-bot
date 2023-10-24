@@ -43,8 +43,6 @@
 #include <iostream>
 #include <shared_mutex>
 #include <cstring>
-#include <dpp/entitlement.h>
-#include <dpp/sku.h>
 
 namespace dpp {
 
@@ -68,7 +66,14 @@ struct DPP_EXPORT version_checker {
 	}
 };
 
+/*
+ * We need to tell DPP to NOT do the version checker if something from Unreal Engine is defined.
+ * We have to do this because UE is causing some weirdness where the version checker is broken and always errors.
+ * This is really only for DPP-UE. There is no reason to not do the version checker unless you are in Unreal Engine.
+ */
+#if !defined(UE_BUILD_DEBUG) && !defined(UE_BUILD_DEVELOPMENT) && !defined(UE_BUILD_TEST) && !defined(UE_BUILD_SHIPPING) && !defined(UE_GAME) && !defined(UE_EDITOR) && !defined(UE_BUILD_SHIPPING_WITH_EDITOR) && !defined(UE_BUILD_DOCS)
 static version_checker dpp_vc;
+#endif
 
 
 /**
@@ -197,11 +202,7 @@ typedef std::variant<
 		automod_rule,
 		automod_rule_map,
 		onboarding,
-		welcome_screen,
-		entitlement,
-		entitlement_map,
-		sku,
-		sku_map
+		welcome_screen
 	> confirmable_t;
 
 /**
