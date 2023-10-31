@@ -25,65 +25,32 @@
 
 namespace dpp {
 
-/**
- * @brief Supported image types for profile pictures and CDN endpoints
- */
-enum image_type {
-	/**
-	 * @brief image/png
-	 */
-	i_png,
+	/** @brief Supported image types for profile pictures and CDN endpoints */
+	enum image_type {
+		/// image/png
+		i_png,
+		/// image/jpeg
+		i_jpg,
+		/// image/gif
+		i_gif,
+		/// WebP
+		i_webp,
+	};
 
-	/**
-	 * @brief image/jpeg.
-	 */
-	i_jpg,
-
-	/**
-	 * @brief image/gif.
-	 */
-	i_gif,
-
-	/**
-	 * @brief Webp.
-	 */
-	/// WebP
-	i_webp,
-};
-
-/**
- * @brief Log levels
- */
-enum loglevel {
-	/**
-	 * @brief Trace
-	 */
-	ll_trace = 0,
-
-	/**
-	 * @brief Debug
-	 */
-	ll_debug,
-
-	/**
-	 * @brief Information
-	 */
-	ll_info,
-
-	/**
-	 * @brief Warning
-	 */
-	ll_warning,
-
-	/**
-	 * @brief Error
-	 */
-	ll_error,
-
-	/**
-	 * @brief Critical
-	 */
-	ll_critical
-};
+	/** @brief Log levels */
+	enum loglevel {
+		/// Trace
+		ll_trace = 0,
+		/// Debug
+		ll_debug,
+		/// Information
+		ll_info,
+		/// Warning
+		ll_warning,
+		/// Error
+		ll_error,
+		/// Critical
+		ll_critical
+	};
 
 } // namespace dpp

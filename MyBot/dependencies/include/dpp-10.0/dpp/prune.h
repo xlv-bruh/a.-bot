@@ -48,29 +48,23 @@ protected:
 
 public:
 	/**
-	 * @brief Destroy this prune object
+	 * Destroy this prune object
 	 */
 	virtual ~prune() = default;
 
-	/**
-	 * @brief Number of days to include in the prune.
+	/** Number of days to include in the prune
 	 */
 	uint32_t days = 0;
-
-	/**
-	 * @brief Roles to include in the prune (empty to include everyone).
+	/** Roles to include in the prune (empty to include everyone)
 	 */
 	std::vector<snowflake> include_roles;
-
-	/**
-	 * @brief True if the count of pruneable users should be returned.
-	 * @warning Discord recommend not using this on big guilds.
+	/** True if the count of pruneable users should be returned
+	 * (discord recommend not using this on big guilds)
 	 */
 	bool compute_prune_count;
 
 	/**
-	 * @brief Build JSON from this object.
-	 *
+	 * Build JSON from this object.
 	 * @param with_prune_count True if the prune count boolean is to be set in the built JSON
 	 * @return The JSON of the prune object
 	 */

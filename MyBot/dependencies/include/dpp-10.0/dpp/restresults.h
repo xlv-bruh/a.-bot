@@ -48,36 +48,6 @@
 
 namespace dpp {
 
-#ifdef _WIN32
-	#ifdef _DEBUG
-		extern "C" DPP_EXPORT void you_are_using_a_debug_build_of_dpp_on_a_release_project();
-	#else
-		extern "C" DPP_EXPORT void you_are_using_a_release_build_of_dpp_on_a_debug_project();
-	#endif
-#endif
-
-struct DPP_EXPORT version_checker {
-	version_checker() {
-		#ifdef _WIN32
-			#ifdef _DEBUG
-				you_are_using_a_debug_build_of_dpp_on_a_release_project();
-			#else
-				you_are_using_a_release_build_of_dpp_on_a_debug_project();
-			#endif
-		#endif
-	}
-};
-
-/*
- * We need to tell DPP to NOT do the version checker if something from Unreal Engine is defined.
- * We have to do this because UE is causing some weirdness where the version checker is broken and always errors.
- * This is really only for DPP-UE. There is no reason to not do the version checker unless you are in Unreal Engine.
- */
-#if !defined(UE_BUILD_DEBUG) && !defined(UE_BUILD_DEVELOPMENT) && !defined(UE_BUILD_TEST) && !defined(UE_BUILD_SHIPPING) && !defined(UE_GAME) && !defined(UE_EDITOR) && !defined(UE_BUILD_SHIPPING_WITH_EDITOR) && !defined(UE_BUILD_DOCS)
-static version_checker dpp_vc;
-#endif
-
-
 /**
  * @brief A list of shards
  */
@@ -99,34 +69,22 @@ protected:
 	gateway& fill_from_json_impl(nlohmann::json* j);
 
 public:
-	/**
-	 * @brief Gateway websocket url.
-	 */
+	/// Gateway websocket url
 	std::string url;
 
-	/**
-	 * @brief Number of suggested shards to start.
-	 */
+	/// Number of suggested shards to start
 	uint32_t shards;
 
-	/**
-	 * @brief Total number of sessions that can be started.
-	 */
+	/// Total number of sessions that can be started
 	uint32_t session_start_total;
 
-	/**
-	 * @brief How many sessions are left.
-	 */
+	/// How many sessions are left
 	uint32_t session_start_remaining;
 
-	/**
-	 * @brief How many seconds until the session start quota resets.
-	 */
+	/// How many seconds until the session start quota resets
 	uint32_t session_start_reset_after;
 
-	/**
-	 * @brief How many sessions can be started at the same time.
-	 */
+	/// How many sessions can be started at the same time
 	uint32_t session_start_max_concurrency;
 
 	/**
@@ -231,22 +189,18 @@ struct DPP_EXPORT error_detail {
 	 * @brief Object name which is in error
 	 */
 	std::string object;
-
 	/**
 	 * @brief Field name which is in error
 	 */
 	std::string field;
-
 	/**
 	 * @brief Error code
 	 */
 	std::string code;
-
 	/**
 	 * @brief Error reason (full message)
 	 */
 	std::string reason;
-
 	/**
 	 * @brief Object field index
 	 */
@@ -261,18 +215,15 @@ struct DPP_EXPORT error_info {
 	 * @brief Error code
 	 */
 	uint32_t code = 0;
-
 	/**
 	 * @brief Error message
 	 *
 	 */
 	std::string message;
-
 	/**
 	 * @brief Field specific error descriptions
 	 */
 	std::vector<error_detail> errors;
-
 	/**
 	 * @brief Human readable error message constructed from the above
 	 */
@@ -283,23 +234,17 @@ struct DPP_EXPORT error_info {
  * @brief The results of a REST call wrapped in a convenient struct
  */
 struct DPP_EXPORT confirmation_callback_t {
-	/**
-	 * @brief Information about the HTTP call used to make the request.
-	 */
+	/** Information about the HTTP call used to make the request */
 	http_request_completion_t http_info;
 
-	/**
-	 * @brief Value returned, wrapped in variant.
-	 */
+	/** Value returned, wrapped in variant */
 	confirmable_t value;
 
-	/**
-	 * @brief Owner/creator of the callback object.
-	 */
+	/** Owner/creator of the callback object */
 	const class cluster* bot;
 
 	/**
-	 * @brief Construct a new confirmation callback t object.
+	 * @brief Construct a new confirmation callback t object
 	 */
 	confirmation_callback_t() = default;
 
