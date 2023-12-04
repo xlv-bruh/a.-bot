@@ -33,7 +33,7 @@ namespace dpp {
  * @tparam T Type of class that implements the interface
  */
 template<typename T>
-struct json_interface {
+struct DPP_EXPORT json_interface {
 	/**
 	 * @brief Convert object from nlohmann::json
 	 *
