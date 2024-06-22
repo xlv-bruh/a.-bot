@@ -694,7 +694,7 @@ public:
 	 * @return nlohmann::json JSON data for use in the library
 	 * @throw dpp::exception Malformed or otherwise invalid ETF content
 	 */
-    nlohmann::json parse(std::string_view in);
+	nlohmann::json parse(const std::string& in);
 
 	/**
 	 * @brief Create ETF binary data from nlohmann::json

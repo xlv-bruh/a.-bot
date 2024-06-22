@@ -239,7 +239,7 @@ public:
 	 * @return scheduled_event& reference to self
 	 * @throw dpp::length_error if length < 1
 	 */
-    scheduled_event& set_name(std::string_view n);
+	scheduled_event& set_name(const std::string& n);
 
 	/**
 	 * @brief Set the description of the event.
@@ -248,7 +248,7 @@ public:
 	 * @return scheduled_event& reference to self
 	 * @throw dpp::length_error if length < 1
 	 */
-    scheduled_event& set_description(std::string_view d);
+	scheduled_event& set_description(const std::string& d);
 
 	/**
 	 * @brief Clear the description of the event.
@@ -264,7 +264,7 @@ public:
 	 * @return scheduled_event& reference to self
 	 * @throw dpp::length_error if length < 1
 	 */
-    scheduled_event& set_location(std::string_view l);
+	scheduled_event& set_location(const std::string& l);
 
 	/**
 	 * @brief Set the voice channel id of the event.
