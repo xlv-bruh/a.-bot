@@ -1980,12 +1980,7 @@ struct DPP_EXPORT voice_buffer_send_t : public event_dispatch_t {
 	/**
 	 * @brief encoded size of sent buffer
 	 */
-	uint64_t buffer_size = 0;
-
-	/**
-	 * @brief number of packet waiting to be sent in the queue
-	 */
-	size_t packets_left = 0;
+	int buffer_size = 0;
 };
 
 /**
@@ -2084,7 +2079,7 @@ struct DPP_EXPORT voice_receive_t : public event_dispatch_t {
 	/**
 	 * @brief Audio data, encoded as 48kHz stereo PCM or Opus,
 	 */
-	std::vector<uint8_t> audio_data = {};
+	std::basic_string<uint8_t> audio_data = {};
 
 	/**
 	 * @brief User ID of speaker (zero if unknown)
