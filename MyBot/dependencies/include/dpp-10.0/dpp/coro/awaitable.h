@@ -116,7 +116,6 @@ protected:
 	template <bool Timed>
 	auto sync_wait_impl(auto&& do_wait) {
 		using result_type = decltype(detail::co_await_resolve(std::declval<Derived>()).await_resume());
-		using storage_type = std::conditional_t<std::is_void_v<result_type>, detail::promise::empty, result_type>;
 		using variant_type = detail::promise::result_t<result_type>;
 		variant_type result;
 		std::condition_variable cv;
@@ -530,9 +529,9 @@ public:
 	 * @tparam Notify Whether to resume any awaiter or not.
 	 * @throws dpp::logic_exception if the promise is not empty.
 	 */
-	template <bool Notify = true>
-	requires (detail::is_copy_constructible<T>)
-	void set_value(const detail::argument<T>& v) {
+	template <bool Notify = true, typename U = T>
+	requires (std::convertible_to<const U&, T>)
+	void set_value(const U& v) {
 		emplace_value<Notify>(v);
 	}
 
@@ -542,9 +541,9 @@ public:
 	 * @tparam Notify Whether to resume any awaiter or not.
 	 * @throws dpp::logic_exception if the promise is not empty.
 	 */
-	template <bool Notify = true>
-	requires (detail::is_move_constructible<T>)
-	void set_value(detail::argument<T>&& v) {
+	template <bool Notify = true, typename U = T>
+	requires (std::convertible_to<U&&, T>)
+	void set_value(U&& v) {
 		emplace_value<Notify>(std::move(v));
 	}
 
@@ -598,16 +597,16 @@ public:
 	/**
 	 * @copydoc basic_promise<T>::set_value(const T&)
 	 */
-	template <bool Notify = true>
-	void set_value(const detail::argument<T>& v) requires (detail::is_copy_constructible<T>) {
+	template <bool Notify = true, typename U = T>
+	void set_value(const U& v) requires (std::convertible_to<const U&, T>) {
 		shared_state->template set_value<Notify>(v);
 	}
 
 	/**
 	 * @copydoc basic_promise<T>::set_value(T&&)
 	 */
-	template <bool Notify = true>
-	void set_value(detail::argument<T>&& v) requires (detail::is_move_constructible<T>) {
+	template <bool Notify = true, typename U = T>
+	void set_value(U&& v) requires (std::convertible_to<const U&, T>) {
 		shared_state->template set_value<Notify>(std::move(v));
 	}
 
