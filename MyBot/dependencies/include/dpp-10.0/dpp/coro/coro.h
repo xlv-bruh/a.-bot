@@ -19,8 +19,8 @@
  *
  ************************************************************************************/
 
-#ifdef DPP_CORO
 #pragma once
+#ifdef DPP_CORO
 
 #if (defined(_LIBCPP_VERSION) and !defined(__cpp_impl_coroutine)) // if libc++ experimental implementation (LLVM < 14)
 #  define STDCORO_EXPERIMENTAL_HEADER
@@ -113,14 +113,46 @@ decltype(auto) co_await_resolve(T&& expr) noexcept {
 	return static_cast<T&&>(expr);
 }
 
+/**
+ * @brief Helper for when we need to pass an argument that may be void at parsing
+ * e.g. `void set_value(const detail::argument<T>& v) requires (std::copy_constructible<T>)`) would break without this
+ */
+template <typename T>
+using argument = std::conditional_t<std::is_void_v<T>, std::monostate, std::type_identity_t<T>>;
+
+/**
+ * @brief Helper because clang15 chokes on std::copy_constructible<void>
+ */
+template <typename T>
+inline constexpr bool is_copy_constructible = std::copy_constructible<T>;
+
+/**
+ * @brief Helper because clang15 chokes on std::copy_constructible<void>
+ */
+template <>
+inline constexpr bool is_copy_constructible<void> = false;
+
+/**
+ * @brief Helper because clang15 chokes on std::move_constructible<void>
+ */
+template <typename T>
+inline constexpr bool is_move_constructible = std::move_constructible<T>;
+
+/**
+ * @brief Helper because clang15 chokes on std::move_constructible<void>
+ */
+template <>
+inline constexpr bool is_move_constructible<void> = false;
+
 #else
+
 /**
  * @brief Concept to check if a type has a useable `operator co_await()` member
  *
  * @note This is actually a C++20 concept but Doxygen doesn't do well with them
  */
 template <typename T>
-bool has_co_await_member;
+inline constexpr bool has_co_await_member;
 
 /**
  * @brief Concept to check if a type has a useable overload of the free function `operator co_await(expr)`
@@ -128,7 +160,7 @@ bool has_co_await_member;
  * @note This is actually a C++20 concept but Doxygen doesn't do well with them
  */
 template <typename T>
-bool has_free_co_await;
+inline constexpr bool has_free_co_await;
 
 /**
  * @brief Concept to check if a type has useable `await_ready()`, `await_suspend()` and `await_resume()` member functions.
@@ -136,7 +168,15 @@ bool has_free_co_await;
  * @note This is actually a C++20 concept but Doxygen doesn't do well with them
  */
 template <typename T>
-bool has_await_members;
+inline constexpr bool has_await_members;
+
+/**
+ * @brief Concept to check if a type can be used with co_await
+ * 
+ * @note This is actually a C++20 concept but Doxygen doesn't do well with them
+ */
+template <typename T>
+inline constexpr bool awaitable_type;
 
 /**
  * @brief Mimics the compiler's behavior of using co_await. That is, it returns whichever works first, in order : `expr.operator co_await();` > `operator co_await(expr)` > `expr`
@@ -144,6 +184,7 @@ bool has_await_members;
  * This function is conditionally noexcept, if the returned expression also is.
  */
 decltype(auto) co_await_resolve(auto&& expr) {}
+
 #endif
 
 /**
@@ -153,6 +194,12 @@ template <typename T>
 using awaitable_result = decltype(co_await_resolve(std::declval<T>()).await_resume());
 
 } // namespace detail
+
+/**
+ * @brief Concept to check if a type can be used with co_await
+ */
+template <typename T>
+concept awaitable_type = requires (T expr) { detail::co_await_resolve(expr); };
 
 struct confirmation_callback_t;
 
