@@ -118,9 +118,7 @@ extern bool DPP_EXPORT validate_configuration();
 #ifndef _WIN32
 	#define SOCKET int
 #else
-  #ifndef NOMINMAX
-	  #define NOMINMAX
-  #endif
+	#define NOMINMAX
 
 	#include <WinSock2.h>
 #endif
