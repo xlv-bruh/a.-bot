@@ -28,7 +28,7 @@ namespace dpp {
 /**
  * @brief Supported image types for profile pictures and CDN endpoints
  */
-enum image_type : uint8_t {
+enum image_type {
 	/**
 	 * @brief image/png
 	 */
