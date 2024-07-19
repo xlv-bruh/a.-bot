@@ -26,6 +26,19 @@
 #include <cstdint>
 #include <type_traits>
 
+#if __cplusplus >= 202002L
+//fix for https://github.com/llvm/llvm-project/issues/77773 and
+// apple support on clang 14 https://developer.apple.com/xcode/cpp/
+#if (defined(__cpp_lib_format) || \
+        (defined(__clang__) && __clang_major__ >= 14 && !defined(__APPLE__) && __has_include(<format>))) || ( defined(__GNUC__) &&  __GNUC__ >= 13)
+
+#define DPP_HAS_FORMAT
+
+#include <format>
+
+#endif
+#endif
+
 /**
  * @brief The main namespace for D++ functions. classes and types
  */
@@ -281,3 +294,23 @@ struct std::hash<dpp::snowflake>
 		return std::hash<uint64_t>{}(s.value);
 	}
 };
+
+#ifdef DPP_HAS_FORMAT
+/*
+ * @brief implementation of formater for dpp::snowflake for std::format support
+ * https://en.cppreference.com/w/cpp/utility/format/formatter
+ */
+template <>
+struct std::formatter<dpp::snowflake>
+{
+        template<class TP>
+        constexpr typename TP::iterator parse(TP& ctx) {
+                return ctx.begin();
+        }
+
+        template<class TF>
+        typename TF::iterator format(const dpp::snowflake& snowflake, TF& ctx) const {
+                return std::format_to(ctx.out(), "{}", snowflake.str());
+        }
+};
+#endif //DPP_HAS_FORMAT
