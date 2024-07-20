@@ -26,10 +26,6 @@
 #include <cstdint>
 #include <type_traits>
 
-#ifdef DPP_HAS_FORMAT
-#include <format>
-#endif
-
 /**
  * @brief The main namespace for D++ functions. classes and types
  */
@@ -285,23 +281,3 @@ struct std::hash<dpp::snowflake>
 		return std::hash<uint64_t>{}(s.value);
 	}
 };
-
-#ifdef DPP_HAS_FORMAT
-/*
- * @brief implementation of formater for dpp::snowflake for std::format support
- * https://en.cppreference.com/w/cpp/utility/format/formatter
- */
-template <>
-struct std::formatter<dpp::snowflake>
-{
-        template<class TP>
-        constexpr typename TP::iterator parse(TP& ctx) {
-                return ctx.begin();
-        }
-
-        template<class TF>
-        typename TF::iterator format(const dpp::snowflake& snowflake, TF& ctx) const {
-                return std::format_to(ctx.out(), "{}", snowflake.str());
-        }
-};
-#endif //DPP_HAS_FORMAT
