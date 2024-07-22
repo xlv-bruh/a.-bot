@@ -296,10 +296,8 @@ public:
 
 	/**
 	 * @brief How many seconds before the connection is considered failed if not finished
-	 *
-	 * @deprecated Please now use dpp::cluster::request_timeout
 	 */
-	DPP_DEPRECATED("Please now use dpp::cluster::request_timeout") time_t request_timeout;
+	time_t request_timeout;
 
 	/**
 	 * @brief Constructor. When constructing one of these objects it should be passed to request_queue::post_request().
