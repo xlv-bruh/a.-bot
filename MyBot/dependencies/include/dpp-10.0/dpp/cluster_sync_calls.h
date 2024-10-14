@@ -38,11 +38,10 @@
  * @return slashcommand_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") slashcommand_map global_bulk_command_create_sync(const std::vector<slashcommand> &commands);
+slashcommand_map global_bulk_command_create_sync(const std::vector<slashcommand> &commands);
 
 /**
  * @brief Delete all existing global slash commands.
@@ -52,11 +51,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return slashcommand_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") slashcommand_map global_bulk_command_delete_sync();
+slashcommand_map global_bulk_command_delete_sync();
 
 /**
  * @brief Create a global slash command (a bot can have a maximum of 100 of these).
@@ -67,11 +65,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return slashcommand returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") slashcommand global_command_create_sync(const slashcommand &s);
+slashcommand global_command_create_sync(const slashcommand &s);
 
 /**
  * @brief Get a global slash command
@@ -82,11 +79,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return slashcommand returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") slashcommand global_command_get_sync(snowflake id);
+slashcommand global_command_get_sync(snowflake id);
 
 /**
  * @brief Delete a global slash command (a bot can have a maximum of 100 of these)
@@ -97,11 +93,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation global_command_delete_sync(snowflake id);
+confirmation global_command_delete_sync(snowflake id);
 
 /**
  * @brief Edit a global slash command (a bot can have a maximum of 100 of these)
@@ -112,11 +107,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation global_command_edit_sync(const slashcommand &s);
+confirmation global_command_edit_sync(const slashcommand &s);
 
 /**
  * @brief Get the application's global slash commands
@@ -126,11 +120,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return slashcommand_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") slashcommand_map global_commands_get_sync();
+slashcommand_map global_commands_get_sync();
 
 /**
  * @brief Create/overwrite guild slash commands.
@@ -144,11 +137,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return slashcommand_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") slashcommand_map guild_bulk_command_create_sync(const std::vector<slashcommand> &commands, snowflake guild_id);
+slashcommand_map guild_bulk_command_create_sync(const std::vector<slashcommand> &commands, snowflake guild_id);
 
 /**
  * @brief Delete all existing guild slash commands.
@@ -159,11 +151,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return slashcommand_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") slashcommand_map guild_bulk_command_delete_sync(snowflake guild_id);
+slashcommand_map guild_bulk_command_delete_sync(snowflake guild_id);
 
 /**
  * @brief Get all slash command permissions of a guild
@@ -174,11 +165,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return guild_command_permissions_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild_command_permissions_map guild_commands_get_permissions_sync(snowflake guild_id);
+guild_command_permissions_map guild_commands_get_permissions_sync(snowflake guild_id);
 
 /**
  * @brief Edit/Overwrite the permissions of all existing slash commands in a guild
@@ -194,11 +184,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @deprecated This has been disabled with updates to Permissions v2. You can use guild_command_edit_permissions instead
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild_command_permissions_map guild_bulk_command_edit_permissions_sync(const std::vector<slashcommand> &commands, snowflake guild_id);
+guild_command_permissions_map guild_bulk_command_edit_permissions_sync(const std::vector<slashcommand> &commands, snowflake guild_id);
 
 /**
  * @brief Create a slash command local to a guild
@@ -211,11 +200,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return slashcommand returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") slashcommand guild_command_create_sync(const slashcommand &s, snowflake guild_id);
+slashcommand guild_command_create_sync(const slashcommand &s, snowflake guild_id);
 
 /**
  * @brief Delete a slash command local to a guild
@@ -227,11 +215,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_command_delete_sync(snowflake id, snowflake guild_id);
+confirmation guild_command_delete_sync(snowflake id, snowflake guild_id);
 
 /**
  * @brief Edit slash command permissions of a guild
@@ -244,11 +231,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_command_edit_permissions_sync(const slashcommand &s, snowflake guild_id);
+confirmation guild_command_edit_permissions_sync(const slashcommand &s, snowflake guild_id);
 
 /**
  * @brief Get a slash command of a guild
@@ -261,11 +247,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return slashcommand returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") slashcommand guild_command_get_sync(snowflake id, snowflake guild_id);
+slashcommand guild_command_get_sync(snowflake id, snowflake guild_id);
 
 /**
  * @brief Get the permissions for a slash command of a guild
@@ -277,11 +262,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return guild_command_permissions returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild_command_permissions guild_command_get_permissions_sync(snowflake id, snowflake guild_id);
+guild_command_permissions guild_command_get_permissions_sync(snowflake id, snowflake guild_id);
 
 /**
  * @brief Edit a slash command local to a guild
@@ -293,11 +277,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_command_edit_sync(const slashcommand &s, snowflake guild_id);
+confirmation guild_command_edit_sync(const slashcommand &s, snowflake guild_id);
 
 /**
  * @brief Get the application's slash commands for a guild
@@ -309,11 +292,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return slashcommand_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") slashcommand_map guild_commands_get_sync(snowflake guild_id);
+slashcommand_map guild_commands_get_sync(snowflake guild_id);
 
 /**
  * @brief Respond to a slash command
@@ -326,11 +308,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation interaction_response_create_sync(snowflake interaction_id, const std::string &token, const interaction_response &r);
+confirmation interaction_response_create_sync(snowflake interaction_id, const std::string &token, const interaction_response &r);
 
 /**
  * @brief Edit response to a slash command
@@ -342,11 +323,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation interaction_response_edit_sync(const std::string &token, const message &m);
+confirmation interaction_response_edit_sync(const std::string &token, const message &m);
 
 /**
  * @brief Get the original response to a slash command
@@ -357,11 +337,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return message returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message interaction_response_get_original_sync(const std::string &token);
+message interaction_response_get_original_sync(const std::string &token);
 
 /**
  * @brief Create a followup message to a slash command
@@ -373,11 +352,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation interaction_followup_create_sync(const std::string &token, const message &m);
+confirmation interaction_followup_create_sync(const std::string &token, const message &m);
 
 /**
  * @brief Edit original followup message to a slash command
@@ -390,11 +368,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation interaction_followup_edit_original_sync(const std::string &token, const message &m);
+confirmation interaction_followup_edit_original_sync(const std::string &token, const message &m);
 
 /**
  * @brief Delete the initial interaction response
@@ -405,11 +382,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation interaction_followup_delete_sync(const std::string &token);
+confirmation interaction_followup_delete_sync(const std::string &token);
 
 /**
  * @brief Edit followup message to a slash command
@@ -422,11 +398,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation interaction_followup_edit_sync(const std::string &token, const message &m);
+confirmation interaction_followup_edit_sync(const std::string &token, const message &m);
 
 /**
  * @brief Get the followup message to a slash command
@@ -438,11 +413,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return message returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message interaction_followup_get_sync(const std::string &token, snowflake message_id);
+message interaction_followup_get_sync(const std::string &token, snowflake message_id);
 
 /**
  * @brief Get the original followup message to a slash command
@@ -454,11 +428,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return message returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message interaction_followup_get_original_sync(const std::string &token);
+message interaction_followup_get_original_sync(const std::string &token);
 
 /**
  * @brief Get all auto moderation rules for a guild
@@ -467,11 +440,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return automod_rule_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") automod_rule_map automod_rules_get_sync(snowflake guild_id);
+automod_rule_map automod_rules_get_sync(snowflake guild_id);
 
 /**
  * @brief Get a single auto moderation rule
@@ -481,11 +453,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return automod_rule returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") automod_rule automod_rule_get_sync(snowflake guild_id, snowflake rule_id);
+automod_rule automod_rule_get_sync(snowflake guild_id, snowflake rule_id);
 
 /**
  * @brief Create an auto moderation rule
@@ -495,11 +466,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return automod_rule returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") automod_rule automod_rule_create_sync(snowflake guild_id, const automod_rule& r);
+automod_rule automod_rule_create_sync(snowflake guild_id, const automod_rule& r);
 
 /**
  * @brief Edit an auto moderation rule
@@ -509,11 +479,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return automod_rule returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") automod_rule automod_rule_edit_sync(snowflake guild_id, const automod_rule& r);
+automod_rule automod_rule_edit_sync(snowflake guild_id, const automod_rule& r);
 
 /**
  * @brief Delete an auto moderation rule
@@ -523,11 +492,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation automod_rule_delete_sync(snowflake guild_id, snowflake rule_id);
+confirmation automod_rule_delete_sync(snowflake guild_id, snowflake rule_id);
 
 /**
  * @brief Create a channel
@@ -545,11 +513,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return channel returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") channel channel_create_sync(const class channel &c);
+channel channel_create_sync(const class channel &c);
 
 /**
  * @brief Remove a permission from a channel
@@ -561,11 +528,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation channel_delete_permission_sync(const class channel &c, snowflake overwrite_id);
+confirmation channel_delete_permission_sync(const class channel &c, snowflake overwrite_id);
 
 /**
  * @brief Delete a channel
@@ -576,11 +542,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation channel_delete_sync(snowflake channel_id);
+confirmation channel_delete_sync(snowflake channel_id);
 
 /**
  * @brief Edit a channel's permissions
@@ -596,11 +561,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation channel_edit_permissions_sync(const class channel &c, const snowflake overwrite_id, const uint64_t allow, const uint64_t deny, const bool member);
+confirmation channel_edit_permissions_sync(const class channel &c, const snowflake overwrite_id, const uint64_t allow, const uint64_t deny, const bool member);
 
 /**
  * @brief Edit a channel's permissions
@@ -616,11 +580,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation channel_edit_permissions_sync(const snowflake channel_id, const snowflake overwrite_id, const uint64_t allow, const uint64_t deny, const bool member);
+confirmation channel_edit_permissions_sync(const snowflake channel_id, const snowflake overwrite_id, const uint64_t allow, const uint64_t deny, const bool member);
 
 /**
  * @brief Edit multiple channels positions
@@ -635,11 +598,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation channel_edit_positions_sync(const std::vector<channel> &c);
+confirmation channel_edit_positions_sync(const std::vector<channel> &c);
 
 /**
  * @brief Edit a channel
@@ -650,11 +612,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return channel returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") channel channel_edit_sync(const class channel &c);
+channel channel_edit_sync(const class channel &c);
 
 /**
  * @brief Follow an announcement (news) channel
@@ -665,11 +626,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation channel_follow_news_sync(const class channel &c, snowflake target_channel_id);
+confirmation channel_follow_news_sync(const class channel &c, snowflake target_channel_id);
 
 /**
  * @brief Get a channel
@@ -680,11 +640,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return channel returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") channel channel_get_sync(snowflake c);
+channel channel_get_sync(snowflake c);
 
 /**
  * @brief Create invite for a channel
@@ -696,11 +655,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return invite returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") invite channel_invite_create_sync(const class channel &c, const class invite &i);
+invite channel_invite_create_sync(const class channel &c, const class invite &i);
 
 /**
  * @brief Get invites for a channel
@@ -711,11 +669,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return invite_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") invite_map channel_invites_get_sync(const class channel &c);
+invite_map channel_invites_get_sync(const class channel &c);
 
 /**
  * @brief Trigger channel typing indicator
@@ -725,11 +682,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation channel_typing_sync(const class channel &c);
+confirmation channel_typing_sync(const class channel &c);
 
 /**
  * @brief Trigger channel typing indicator
@@ -739,11 +695,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation channel_typing_sync(snowflake cid);
+confirmation channel_typing_sync(snowflake cid);
 
 /**
  * @brief Get all channels for a guild
@@ -754,11 +709,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return channel_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") channel_map channels_get_sync(snowflake guild_id);
+channel_map channels_get_sync(snowflake guild_id);
 
 /**
  * @brief Set the status of a voice channel.
@@ -770,11 +724,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation channel_set_voice_status_sync(snowflake channel_id, const std::string& status);
+confirmation channel_set_voice_status_sync(snowflake channel_id, const std::string& status);
 
 /**
  * @brief Create a dm channel
@@ -784,11 +737,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return channel returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") channel create_dm_channel_sync(snowflake user_id);
+channel create_dm_channel_sync(snowflake user_id);
 
 /**
  * @brief Get current user DM channels
@@ -796,11 +748,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return channel_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") channel_map current_user_get_dms_sync();
+channel_map current_user_get_dms_sync();
 
 /**
  * @brief Create a direct message, also create the channel for the direct message if needed
@@ -814,11 +765,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return message returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message direct_message_create_sync(snowflake user_id, const message &m);
+message direct_message_create_sync(snowflake user_id, const message &m);
 
 /**
  * @brief Adds a recipient to a Group DM using their access token
@@ -831,11 +781,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation gdm_add_sync(snowflake channel_id, snowflake user_id, const std::string &access_token, const std::string &nick);
+confirmation gdm_add_sync(snowflake channel_id, snowflake user_id, const std::string &access_token, const std::string &nick);
 
 /**
  * @brief Removes a recipient from a Group DM
@@ -846,11 +795,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation gdm_remove_sync(snowflake channel_id, snowflake user_id);
+confirmation gdm_remove_sync(snowflake channel_id, snowflake user_id);
 
 /**
  * @brief Create single emoji.
@@ -864,11 +812,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return emoji returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") emoji guild_emoji_create_sync(snowflake guild_id, const class emoji& newemoji);
+emoji guild_emoji_create_sync(snowflake guild_id, const class emoji& newemoji);
 
 /**
  * @brief Delete a guild emoji
@@ -881,11 +828,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_emoji_delete_sync(snowflake guild_id, snowflake emoji_id);
+confirmation guild_emoji_delete_sync(snowflake guild_id, snowflake emoji_id);
 
 /**
  * @brief Edit a single emoji.
@@ -899,11 +845,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return emoji returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") emoji guild_emoji_edit_sync(snowflake guild_id, const class emoji& newemoji);
+emoji guild_emoji_edit_sync(snowflake guild_id, const class emoji& newemoji);
 
 /**
  * @brief Get a single emoji
@@ -915,11 +860,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return emoji returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") emoji guild_emoji_get_sync(snowflake guild_id, snowflake emoji_id);
+emoji guild_emoji_get_sync(snowflake guild_id, snowflake emoji_id);
 
 /**
  * @brief Get all emojis for a guild
@@ -930,11 +874,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return emoji_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") emoji_map guild_emojis_get_sync(snowflake guild_id);
+emoji_map guild_emojis_get_sync(snowflake guild_id);
 
 /**
  * @brief List all Application Emojis
@@ -944,11 +887,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return emoji_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") emoji_map application_emojis_get_sync();
+emoji_map application_emojis_get_sync();
 
 /**
  * @brief Get an Application Emoji
@@ -959,11 +901,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return emoji returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") emoji application_emoji_get_sync(snowflake emoji_id);
+emoji application_emoji_get_sync(snowflake emoji_id);
 
 /**
  * @brief Create an Application Emoji
@@ -974,11 +915,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return emoji returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") emoji application_emoji_create_sync(const class emoji& newemoji);
+emoji application_emoji_create_sync(const class emoji& newemoji);
 
 /**
  * @brief Edit an Application Emoji
@@ -989,11 +929,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return emoji returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") emoji application_emoji_edit_sync(const class emoji& newemoji);
+emoji application_emoji_edit_sync(const class emoji& newemoji);
 
 /**
  * @brief Delete an Application Emoji
@@ -1004,11 +943,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation application_emoji_delete_sync(snowflake emoji_id);
+confirmation application_emoji_delete_sync(snowflake emoji_id);
 
 /**
  * @brief Returns all entitlements for a given app, active and expired.
@@ -1025,11 +963,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return entitlement_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") entitlement_map entitlements_get_sync(snowflake user_id = 0, const std::vector<snowflake>& sku_ids = {}, snowflake before_id = 0, snowflake after_id = 0, uint8_t limit = 100, snowflake guild_id = 0, bool exclude_ended = false);
+entitlement_map entitlements_get_sync(snowflake user_id = 0, const std::vector<snowflake>& sku_ids = {}, snowflake before_id = 0, snowflake after_id = 0, uint8_t limit = 100, snowflake guild_id = 0, bool exclude_ended = false);
 
 /**
  * @brief Creates a test entitlement to a given SKU for a given guild or user.
@@ -1043,11 +980,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return entitlement returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") entitlement entitlement_test_create_sync(const class entitlement& new_entitlement);
+entitlement entitlement_test_create_sync(const class entitlement& new_entitlement);
 
 /**
  * @brief Deletes a currently-active test entitlement.
@@ -1059,11 +995,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation entitlement_test_delete_sync(snowflake entitlement_id);
+confirmation entitlement_test_delete_sync(snowflake entitlement_id);
 
 /**
  * @brief For One-Time Purchase consumable SKUs, marks a given entitlement for the user as consumed.
@@ -1074,11 +1009,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation entitlement_consume_sync(snowflake entitlement_id);
+confirmation entitlement_consume_sync(snowflake entitlement_id);
 
 /**
  * @brief Get the gateway information for the bot using the token
@@ -1087,11 +1021,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return gateway returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") gateway get_gateway_bot_sync();
+gateway get_gateway_bot_sync();
 
 /**
  * @brief Modify current member
@@ -1107,11 +1040,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_current_member_edit_sync(snowflake guild_id, const std::string &nickname);
+confirmation guild_current_member_edit_sync(snowflake guild_id, const std::string &nickname);
 
 /**
  * @brief Get the audit log for a guild
@@ -1127,11 +1059,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return auditlog returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") auditlog guild_auditlog_get_sync(snowflake guild_id, snowflake user_id, uint32_t action_type, snowflake before, snowflake after, uint32_t limit);
+auditlog guild_auditlog_get_sync(snowflake guild_id, snowflake user_id, uint32_t action_type, snowflake before, snowflake after, uint32_t limit);
 
 /**
  * @brief Add guild ban
@@ -1147,11 +1078,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_ban_add_sync(snowflake guild_id, snowflake user_id, uint32_t delete_message_seconds = 0);
+confirmation guild_ban_add_sync(snowflake guild_id, snowflake user_id, uint32_t delete_message_seconds = 0);
 
 /**
  * @brief Delete guild ban
@@ -1166,11 +1096,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_ban_delete_sync(snowflake guild_id, snowflake user_id);
+confirmation guild_ban_delete_sync(snowflake guild_id, snowflake user_id);
 
 /**
  * @brief Create a guild
@@ -1193,11 +1122,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return guild returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild guild_create_sync(const class guild &g);
+guild guild_create_sync(const class guild &g);
 
 /**
  * @brief Delete a guild
@@ -1210,11 +1138,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_delete_sync(snowflake guild_id);
+confirmation guild_delete_sync(snowflake guild_id);
 
 /**
  * @brief Delete guild integration
@@ -1230,11 +1157,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_delete_integration_sync(snowflake guild_id, snowflake integration_id);
+confirmation guild_delete_integration_sync(snowflake guild_id, snowflake integration_id);
 
 /**
  * @brief Edit a guild
@@ -1249,11 +1175,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return guild returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild guild_edit_sync(const class guild &g);
+guild guild_edit_sync(const class guild &g);
 
 /**
  * @brief Edit guild widget
@@ -1268,11 +1193,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return guild_widget returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild_widget guild_edit_widget_sync(snowflake guild_id, const class guild_widget &gw);
+guild_widget guild_edit_widget_sync(snowflake guild_id, const class guild_widget &gw);
 
 /**
  * @brief Get single guild ban
@@ -1285,11 +1209,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return ban returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") ban guild_get_ban_sync(snowflake guild_id, snowflake user_id);
+ban guild_get_ban_sync(snowflake guild_id, snowflake user_id);
 
 /**
  * @brief Get guild ban list
@@ -1305,14 +1228,13 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return ban_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") ban_map guild_get_bans_sync(snowflake guild_id, snowflake before, snowflake after, snowflake limit);
+ban_map guild_get_bans_sync(snowflake guild_id, snowflake before, snowflake after, snowflake limit);
 
 
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild guild_get_sync(snowflake guild_id);
+guild guild_get_sync(snowflake guild_id);
 
 /**
  * @brief Get guild integrations
@@ -1327,14 +1249,13 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @note This endpoint returns a maximum of 50 integrations. If a guild has more integrations, they cannot be accessed.
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") integration_map guild_get_integrations_sync(snowflake guild_id);
+integration_map guild_get_integrations_sync(snowflake guild_id);
 
 
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild guild_get_preview_sync(snowflake guild_id);
+guild guild_get_preview_sync(snowflake guild_id);
 
 /**
  * @brief Get guild vanity url, if enabled
@@ -1346,11 +1267,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return invite returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") invite guild_get_vanity_sync(snowflake guild_id);
+invite guild_get_vanity_sync(snowflake guild_id);
 
 /**
  * @brief Get guild widget
@@ -1363,11 +1283,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return guild_widget returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild_widget guild_get_widget_sync(snowflake guild_id);
+guild_widget guild_get_widget_sync(snowflake guild_id);
 
 /**
  * @brief Modify guild integration
@@ -1380,11 +1299,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_modify_integration_sync(snowflake guild_id, const class integration &i);
+confirmation guild_modify_integration_sync(snowflake guild_id, const class integration &i);
 
 /**
  * @brief Get prune counts
@@ -1401,11 +1319,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return prune returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") prune guild_get_prune_counts_sync(snowflake guild_id, const struct prune& pruneinfo);
+prune guild_get_prune_counts_sync(snowflake guild_id, const struct prune& pruneinfo);
 
 /**
  * @brief Begin guild prune
@@ -1424,11 +1341,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return prune returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") prune guild_begin_prune_sync(snowflake guild_id, const struct prune& pruneinfo);
+prune guild_begin_prune_sync(snowflake guild_id, const struct prune& pruneinfo);
 
 /**
  * @brief Change current user nickname
@@ -1445,11 +1361,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_set_nickname_sync(snowflake guild_id, const std::string &nickname);
+confirmation guild_set_nickname_sync(snowflake guild_id, const std::string &nickname);
 
 /**
  * @brief Sync guild integration
@@ -1461,11 +1376,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_sync_integration_sync(snowflake guild_id, snowflake integration_id);
+confirmation guild_sync_integration_sync(snowflake guild_id, snowflake integration_id);
 
 /**
  * @brief Get the guild's onboarding configuration
@@ -1476,11 +1390,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return onboarding returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") onboarding guild_get_onboarding_sync(snowflake guild_id);
+onboarding guild_get_onboarding_sync(snowflake guild_id);
 
 /**
  * @brief Edit the guild's onboarding configuration
@@ -1496,11 +1409,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return onboarding returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") onboarding guild_edit_onboarding_sync(const struct onboarding& o);
+onboarding guild_edit_onboarding_sync(const struct onboarding& o);
 
 /**
  * @brief Get the guild's welcome screen
@@ -1513,11 +1425,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return dpp::welcome_screen returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") dpp::welcome_screen guild_get_welcome_screen_sync(snowflake guild_id);
+dpp::welcome_screen guild_get_welcome_screen_sync(snowflake guild_id);
 
 /**
  * @brief Edit the guild's welcome screen
@@ -1532,11 +1443,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return dpp::welcome_screen returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") dpp::welcome_screen guild_edit_welcome_screen_sync(snowflake guild_id, const struct welcome_screen& welcome_screen, bool enabled);
+dpp::welcome_screen guild_edit_welcome_screen_sync(snowflake guild_id, const struct welcome_screen& welcome_screen, bool enabled);
 
 /**
  * @brief Add guild member. Needs a specific oauth2 scope, from which you get the access_token.
@@ -1556,11 +1466,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_add_member_sync(const guild_member& gm, const std::string &access_token);
+confirmation guild_add_member_sync(const guild_member& gm, const std::string &access_token);
 
 /**
  * @brief Edit the properties of an existing guild member
@@ -1576,11 +1485,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return guild_member returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild_member guild_edit_member_sync(const guild_member& gm);
+guild_member guild_edit_member_sync(const guild_member& gm);
 
 /**
  * @brief Get a guild member
@@ -1591,11 +1499,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return guild_member returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild_member guild_get_member_sync(snowflake guild_id, snowflake user_id);
+guild_member guild_get_member_sync(snowflake guild_id, snowflake user_id);
 
 /**
  * @brief Get all guild members
@@ -1609,11 +1516,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return guild_member_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild_member_map guild_get_members_sync(snowflake guild_id, uint16_t limit, snowflake after);
+guild_member_map guild_get_members_sync(snowflake guild_id, uint16_t limit, snowflake after);
 
 /**
  * @brief Add role to guild member
@@ -1629,11 +1535,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_member_add_role_sync(snowflake guild_id, snowflake user_id, snowflake role_id);
+confirmation guild_member_add_role_sync(snowflake guild_id, snowflake user_id, snowflake role_id);
 
 /**
  * @brief Remove (kick) a guild member
@@ -1649,11 +1554,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_member_delete_sync(snowflake guild_id, snowflake user_id);
+confirmation guild_member_delete_sync(snowflake guild_id, snowflake user_id);
 
 /**
  * @brief Remove (kick) a guild member
@@ -1668,11 +1572,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_member_kick_sync(snowflake guild_id, snowflake user_id);
+confirmation guild_member_kick_sync(snowflake guild_id, snowflake user_id);
 
 /**
  * @brief Set the timeout of a guild member
@@ -1687,11 +1590,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_member_timeout_sync(snowflake guild_id, snowflake user_id, time_t communication_disabled_until);
+confirmation guild_member_timeout_sync(snowflake guild_id, snowflake user_id, time_t communication_disabled_until);
 
 /**
  * @brief Remove the timeout of a guild member.
@@ -1705,11 +1607,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_member_timeout_remove_sync(snowflake guild_id, snowflake user_id);
+confirmation guild_member_timeout_remove_sync(snowflake guild_id, snowflake user_id);
 
 /**
  * @brief Remove role from guild member
@@ -1726,11 +1627,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @deprecated Use dpp::cluster::guild_member_remove_role instead
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_member_delete_role_sync(snowflake guild_id, snowflake user_id, snowflake role_id);
+confirmation guild_member_delete_role_sync(snowflake guild_id, snowflake user_id, snowflake role_id);
 
 /**
  * @brief Remove role from guild member
@@ -1746,11 +1646,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_member_remove_role_sync(snowflake guild_id, snowflake user_id, snowflake role_id);
+confirmation guild_member_remove_role_sync(snowflake guild_id, snowflake user_id, snowflake role_id);
 
 /**
  * @brief Moves the guild member to a other voice channel, if member is connected to one.
@@ -1767,11 +1666,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return guild_member returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild_member guild_member_move_sync(const snowflake channel_id, const snowflake guild_id, const snowflake user_id);
+guild_member guild_member_move_sync(const snowflake channel_id, const snowflake guild_id, const snowflake user_id);
 
 /**
  * @brief Search for guild members based on whether their username or nickname starts with the given string.
@@ -1785,11 +1683,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return guild_member_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild_member_map guild_search_members_sync(snowflake guild_id, const std::string& query, uint16_t limit);
+guild_member_map guild_search_members_sync(snowflake guild_id, const std::string& query, uint16_t limit);
 
 /**
  * @brief Get guild invites
@@ -1802,14 +1699,13 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return invite_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") invite_map guild_get_invites_sync(snowflake guild_id);
+invite_map guild_get_invites_sync(snowflake guild_id);
 
 
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") invite invite_delete_sync(const std::string &invitecode);
+invite invite_delete_sync(const std::string &invitecode);
 
 /**
  * @brief Get details about an invite
@@ -1820,11 +1716,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return invite returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") invite invite_get_sync(const std::string &invite_code);
+invite invite_get_sync(const std::string &invite_code);
 
 /**
  * @brief Add a reaction to a message. The reaction string must be either an `emojiname:id` or a unicode character.
@@ -1836,11 +1731,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation message_add_reaction_sync(const struct message &m, const std::string &reaction);
+confirmation message_add_reaction_sync(const struct message &m, const std::string &reaction);
 
 /**
  * @brief Add a reaction to a message by id. The reaction string must be either an `emojiname:id` or a unicode character.
@@ -1853,11 +1747,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation message_add_reaction_sync(snowflake message_id, snowflake channel_id, const std::string &reaction);
+confirmation message_add_reaction_sync(snowflake message_id, snowflake channel_id, const std::string &reaction);
 
 /**
  * @brief Send a message to a channel. The callback function is called when the message has been sent
@@ -1868,11 +1761,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return message returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message message_create_sync(const struct message &m);
+message message_create_sync(const struct message &m);
 
 /**
  * @brief Crosspost a message. The callback function is called when the message has been sent
@@ -1884,11 +1776,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return message returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message message_crosspost_sync(snowflake message_id, snowflake channel_id);
+message message_crosspost_sync(snowflake message_id, snowflake channel_id);
 
 /**
  * @brief Delete all reactions on a message
@@ -1899,11 +1790,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation message_delete_all_reactions_sync(const struct message &m);
+confirmation message_delete_all_reactions_sync(const struct message &m);
 
 /**
  * @brief Delete all reactions on a message by id
@@ -1915,11 +1805,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation message_delete_all_reactions_sync(snowflake message_id, snowflake channel_id);
+confirmation message_delete_all_reactions_sync(snowflake message_id, snowflake channel_id);
 
 /**
  * @brief Bulk delete messages from a channel. The callback function is called when the message has been edited
@@ -1934,11 +1823,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation message_delete_bulk_sync(const std::vector<snowflake> &message_ids, snowflake channel_id);
+confirmation message_delete_bulk_sync(const std::vector<snowflake> &message_ids, snowflake channel_id);
 
 /**
  * @brief Delete a message from a channel. The callback function is called when the message has been edited
@@ -1951,11 +1839,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation message_delete_sync(snowflake message_id, snowflake channel_id);
+confirmation message_delete_sync(snowflake message_id, snowflake channel_id);
 
 /**
  * @brief Delete own reaction from a message. The reaction string must be either an `emojiname:id` or a unicode character.
@@ -1967,11 +1854,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation message_delete_own_reaction_sync(const struct message &m, const std::string &reaction);
+confirmation message_delete_own_reaction_sync(const struct message &m, const std::string &reaction);
 
 /**
  * @brief Delete own reaction from a message by id. The reaction string must be either an `emojiname:id` or a unicode character.
@@ -1984,11 +1870,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation message_delete_own_reaction_sync(snowflake message_id, snowflake channel_id, const std::string &reaction);
+confirmation message_delete_own_reaction_sync(snowflake message_id, snowflake channel_id, const std::string &reaction);
 
 /**
  * @brief Delete a user's reaction from a message. The reaction string must be either an `emojiname:id` or a unicode character
@@ -2001,11 +1886,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation message_delete_reaction_sync(const struct message &m, snowflake user_id, const std::string &reaction);
+confirmation message_delete_reaction_sync(const struct message &m, snowflake user_id, const std::string &reaction);
 
 /**
  * @brief Delete a user's reaction from a message by id. The reaction string must be either an `emojiname:id` or a unicode character
@@ -2019,11 +1903,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation message_delete_reaction_sync(snowflake message_id, snowflake channel_id, snowflake user_id, const std::string &reaction);
+confirmation message_delete_reaction_sync(snowflake message_id, snowflake channel_id, snowflake user_id, const std::string &reaction);
 
 /**
  * @brief Delete all reactions on a message using a particular emoji. The reaction string must be either an `emojiname:id` or a unicode character
@@ -2035,11 +1918,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation message_delete_reaction_emoji_sync(const struct message &m, const std::string &reaction);
+confirmation message_delete_reaction_emoji_sync(const struct message &m, const std::string &reaction);
 
 /**
  * @brief Delete all reactions on a message using a particular emoji by id. The reaction string must be either an `emojiname:id` or a unicode character
@@ -2052,11 +1934,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation message_delete_reaction_emoji_sync(snowflake message_id, snowflake channel_id, const std::string &reaction);
+confirmation message_delete_reaction_emoji_sync(snowflake message_id, snowflake channel_id, const std::string &reaction);
 
 /**
  * @brief Edit a message on a channel. The callback function is called when the message has been edited
@@ -2067,11 +1948,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return message returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message message_edit_sync(const struct message &m);
+message message_edit_sync(const struct message &m);
 
 /**
  * @brief Edit the flags of a message on a channel. The callback function is called when the message has been edited
@@ -2080,11 +1960,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return message returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message message_edit_flags_sync(const struct message &m);
+message message_edit_flags_sync(const struct message &m);
 
 /**
  * @brief Get a message
@@ -2096,11 +1975,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return message returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message message_get_sync(snowflake message_id, snowflake channel_id);
+message message_get_sync(snowflake message_id, snowflake channel_id);
 
 /**
  * @brief Get reactions on a message for a particular emoji. The reaction string must be either an `emojiname:id` or a unicode character
@@ -2115,11 +1993,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return user_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") user_map message_get_reactions_sync(const struct message &m, const std::string &reaction, snowflake before, snowflake after, snowflake limit);
+user_map message_get_reactions_sync(const struct message &m, const std::string &reaction, snowflake before, snowflake after, snowflake limit);
 
 /**
  * @brief Get reactions on a message for a particular emoji by id. The reaction string must be either an `emojiname:id` or a unicode character
@@ -2135,11 +2012,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return emoji_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") emoji_map message_get_reactions_sync(snowflake message_id, snowflake channel_id, const std::string &reaction, snowflake before, snowflake after, snowflake limit);
+emoji_map message_get_reactions_sync(snowflake message_id, snowflake channel_id, const std::string &reaction, snowflake before, snowflake after, snowflake limit);
 
 /**
  * @brief Pin a message
@@ -2151,11 +2027,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation message_pin_sync(snowflake channel_id, snowflake message_id);
+confirmation message_pin_sync(snowflake channel_id, snowflake message_id);
 
 /**
  * @brief Get multiple messages.
@@ -2172,11 +2047,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return message_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message_map messages_get_sync(snowflake channel_id, snowflake around, snowflake before, snowflake after, uint64_t limit);
+message_map messages_get_sync(snowflake channel_id, snowflake around, snowflake before, snowflake after, uint64_t limit);
 
 /**
  * @brief Unpin a message
@@ -2188,11 +2062,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation message_unpin_sync(snowflake channel_id, snowflake message_id);
+confirmation message_unpin_sync(snowflake channel_id, snowflake message_id);
 
 /**
  * @brief Get a list of users that voted for this specific answer.
@@ -2206,11 +2079,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @see https://discord.com/developers/docs/resources/poll#get-answer-voters
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") user_map poll_get_answer_voters_sync(const message& m, uint32_t answer_id, snowflake after, uint64_t limit);
+user_map poll_get_answer_voters_sync(const message& m, uint32_t answer_id, snowflake after, uint64_t limit);
 
 /**
  * @brief Get a list of users that voted for this specific answer.
@@ -2225,11 +2097,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @see https://discord.com/developers/docs/resources/poll#get-answer-voters
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") user_map poll_get_answer_voters_sync(snowflake message_id, snowflake channel_id, uint32_t answer_id, snowflake after, uint64_t limit);
+user_map poll_get_answer_voters_sync(snowflake message_id, snowflake channel_id, uint32_t answer_id, snowflake after, uint64_t limit);
 
 /**
  * @brief Immediately end a poll.
@@ -2240,11 +2111,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @see https://discord.com/developers/docs/resources/poll#end-poll
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message poll_end_sync(const message &m);
+message poll_end_sync(const message &m);
 
 /**
  * @brief Immediately end a poll.
@@ -2256,11 +2126,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @see https://discord.com/developers/docs/resources/poll#end-poll
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message poll_end_sync(snowflake message_id, snowflake channel_id);
+message poll_end_sync(snowflake message_id, snowflake channel_id);
 
 /**
  * @brief Get a channel's pins
@@ -2270,11 +2139,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return message_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message_map channel_pins_get_sync(snowflake channel_id);
+message_map channel_pins_get_sync(snowflake channel_id);
 
 /**
  * @brief Create a role on a guild
@@ -2289,11 +2157,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return role returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") role role_create_sync(const class role &r);
+role role_create_sync(const class role &r);
 
 /**
  * @brief Delete a role
@@ -2308,11 +2175,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation role_delete_sync(snowflake guild_id, snowflake role_id);
+confirmation role_delete_sync(snowflake guild_id, snowflake role_id);
 
 /**
  * @brief Edit a role on a guild
@@ -2326,11 +2192,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return role returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") role role_edit_sync(const class role &r);
+role role_edit_sync(const class role &r);
 
 /**
  * @brief Edit multiple role's position in a guild. Returns a list of all roles of the guild on success.
@@ -2346,11 +2211,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return role_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") role_map roles_edit_position_sync(snowflake guild_id, const std::vector<role> &roles);
+role_map roles_edit_position_sync(snowflake guild_id, const std::vector<role> &roles);
 
 /**
  * @brief Get a role for a guild
@@ -2361,11 +2225,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return role_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") role_map roles_get_sync(snowflake guild_id);
+role_map roles_get_sync(snowflake guild_id);
 
 /**
  * @brief Get the application's role connection metadata records
@@ -2376,11 +2239,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return application_role_connection returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") application_role_connection application_role_connection_get_sync(snowflake application_id);
+application_role_connection application_role_connection_get_sync(snowflake application_id);
 
 /**
  * @brief Update the application's role connection metadata records
@@ -2393,11 +2255,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @note An application can have a maximum of 5 metadata records.
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") application_role_connection application_role_connection_update_sync(snowflake application_id, const std::vector<application_role_connection_metadata> &connection_metadata);
+application_role_connection application_role_connection_update_sync(snowflake application_id, const std::vector<application_role_connection_metadata> &connection_metadata);
 
 /**
  * @brief Get user application role connection
@@ -2408,11 +2269,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return application_role_connection returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") application_role_connection user_application_role_connection_get_sync(snowflake application_id);
+application_role_connection user_application_role_connection_get_sync(snowflake application_id);
 
 /**
  * @brief Update user application role connection
@@ -2424,11 +2284,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return application_role_connection returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") application_role_connection user_application_role_connection_update_sync(snowflake application_id, const application_role_connection &connection);
+application_role_connection user_application_role_connection_update_sync(snowflake application_id, const application_role_connection &connection);
 
 /**
  * @brief Get all scheduled events for a guild
@@ -2438,11 +2297,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return scheduled_event_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") scheduled_event_map guild_events_get_sync(snowflake guild_id);
+scheduled_event_map guild_events_get_sync(snowflake guild_id);
 
 /**
  * @brief Create a scheduled event on a guild
@@ -2453,11 +2311,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return scheduled_event returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") scheduled_event guild_event_create_sync(const scheduled_event& event);
+scheduled_event guild_event_create_sync(const scheduled_event& event);
 
 /**
  * @brief Delete a scheduled event from a guild
@@ -2469,11 +2326,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_event_delete_sync(snowflake event_id, snowflake guild_id);
+confirmation guild_event_delete_sync(snowflake event_id, snowflake guild_id);
 
 /**
  * @brief Edit/modify a scheduled event on a guild
@@ -2484,11 +2340,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return scheduled_event returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") scheduled_event guild_event_edit_sync(const scheduled_event& event);
+scheduled_event guild_event_edit_sync(const scheduled_event& event);
 
 /**
  * @brief Get a scheduled event for a guild
@@ -2500,11 +2355,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return scheduled_event returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") scheduled_event guild_event_get_sync(snowflake guild_id, snowflake event_id);
+scheduled_event guild_event_get_sync(snowflake guild_id, snowflake event_id);
 
 /**
  * @brief Returns all SKUs for a given application.
@@ -2516,14 +2370,13 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return sku_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") sku_map skus_get_sync();
+sku_map skus_get_sync();
 
 
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") stage_instance stage_instance_create_sync(const stage_instance& si);
+stage_instance stage_instance_create_sync(const stage_instance& si);
 
 /**
  * @brief Get the stage instance associated with the channel id, if it exists.
@@ -2533,14 +2386,13 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return stage_instance returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") stage_instance stage_instance_get_sync(const snowflake channel_id);
+stage_instance stage_instance_get_sync(const snowflake channel_id);
 
 
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") stage_instance stage_instance_edit_sync(const stage_instance& si);
+stage_instance stage_instance_edit_sync(const stage_instance& si);
 
 /**
  * @brief Delete a stage instance.
@@ -2551,11 +2403,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @note This method supports audit log reasons set by the cluster::set_audit_reason() method.
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation stage_instance_delete_sync(const snowflake channel_id);
+confirmation stage_instance_delete_sync(const snowflake channel_id);
 
 /**
  * @brief Create a sticker in a guild
@@ -2566,11 +2417,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return sticker returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") sticker guild_sticker_create_sync(const sticker &s);
+sticker guild_sticker_create_sync(const sticker &s);
 
 /**
  * @brief Delete a sticker from a guild
@@ -2582,11 +2432,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_sticker_delete_sync(snowflake sticker_id, snowflake guild_id);
+confirmation guild_sticker_delete_sync(snowflake sticker_id, snowflake guild_id);
 
 /**
  * @brief Get a guild sticker
@@ -2597,11 +2446,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return sticker returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") sticker guild_sticker_get_sync(snowflake id, snowflake guild_id);
+sticker guild_sticker_get_sync(snowflake id, snowflake guild_id);
 
 /**
  * @brief Modify a sticker in a guild
@@ -2612,11 +2460,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return sticker returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") sticker guild_sticker_modify_sync(const sticker &s);
+sticker guild_sticker_modify_sync(const sticker &s);
 
 /**
  * @brief Get all guild stickers
@@ -2626,11 +2473,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return sticker_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") sticker_map guild_stickers_get_sync(snowflake guild_id);
+sticker_map guild_stickers_get_sync(snowflake guild_id);
 
 /**
  * @brief Get a nitro sticker
@@ -2640,11 +2486,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return sticker returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") sticker nitro_sticker_get_sync(snowflake id);
+sticker nitro_sticker_get_sync(snowflake id);
 
 /**
  * @brief Get a list of available sticker packs
@@ -2653,11 +2498,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return sticker_pack_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") sticker_pack_map sticker_packs_get_sync();
+sticker_pack_map sticker_packs_get_sync();
 
 /**
  * @brief Create a new guild based on a template.
@@ -2669,11 +2513,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return guild returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild guild_create_from_template_sync(const std::string &code, const std::string &name);
+guild guild_create_from_template_sync(const std::string &code, const std::string &name);
 
 /**
  * @brief Creates a template for the guild
@@ -2686,11 +2529,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return dtemplate returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") dtemplate guild_template_create_sync(snowflake guild_id, const std::string &name, const std::string &description);
+dtemplate guild_template_create_sync(snowflake guild_id, const std::string &name, const std::string &description);
 
 /**
  * @brief Deletes the template
@@ -2702,11 +2544,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation guild_template_delete_sync(snowflake guild_id, const std::string &code);
+confirmation guild_template_delete_sync(snowflake guild_id, const std::string &code);
 
 /**
  * @brief Modifies the template's metadata.
@@ -2720,11 +2561,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return dtemplate returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") dtemplate guild_template_modify_sync(snowflake guild_id, const std::string &code, const std::string &name, const std::string &description);
+dtemplate guild_template_modify_sync(snowflake guild_id, const std::string &code, const std::string &name, const std::string &description);
 
 /**
  * @brief Get guild templates
@@ -2735,11 +2575,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return dtemplate_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") dtemplate_map guild_templates_get_sync(snowflake guild_id);
+dtemplate_map guild_templates_get_sync(snowflake guild_id);
 
 /**
  * @brief Syncs the template to the guild's current state.
@@ -2751,11 +2590,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return dtemplate returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") dtemplate guild_template_sync_sync(snowflake guild_id, const std::string &code);
+dtemplate guild_template_sync_sync(snowflake guild_id, const std::string &code);
 
 /**
  * @brief Get a template
@@ -2765,11 +2603,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return dtemplate returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") dtemplate template_get_sync(const std::string &code);
+dtemplate template_get_sync(const std::string &code);
 
 /**
  * @brief Join a thread
@@ -2779,11 +2616,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation current_user_join_thread_sync(snowflake thread_id);
+confirmation current_user_join_thread_sync(snowflake thread_id);
 
 /**
  * @brief Leave a thread
@@ -2793,11 +2629,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation current_user_leave_thread_sync(snowflake thread_id);
+confirmation current_user_leave_thread_sync(snowflake thread_id);
 
 /**
  * @brief Get all active threads in the guild, including public and private threads. Threads are ordered by their id, in descending order.
@@ -2807,11 +2642,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return active_threads returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") active_threads threads_get_active_sync(snowflake guild_id);
+active_threads threads_get_active_sync(snowflake guild_id);
 
 /**
  * @brief Get private archived threads in a channel which current user has joined (Sorted by ID in descending order)
@@ -2823,11 +2657,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return thread_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") thread_map threads_get_joined_private_archived_sync(snowflake channel_id, snowflake before_id, uint16_t limit);
+thread_map threads_get_joined_private_archived_sync(snowflake channel_id, snowflake before_id, uint16_t limit);
 
 /**
  * @brief Get private archived threads in a channel (Sorted by archive_timestamp in descending order)
@@ -2839,11 +2672,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return thread_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") thread_map threads_get_private_archived_sync(snowflake channel_id,  time_t before_timestamp, uint16_t limit);
+thread_map threads_get_private_archived_sync(snowflake channel_id,  time_t before_timestamp, uint16_t limit);
 
 /**
  * @brief Get public archived threads in a channel (Sorted by archive_timestamp in descending order)
@@ -2855,11 +2687,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return thread_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") thread_map threads_get_public_archived_sync(snowflake channel_id, time_t before_timestamp, uint16_t limit);
+thread_map threads_get_public_archived_sync(snowflake channel_id, time_t before_timestamp, uint16_t limit);
 
 /**
  * @brief Get a thread member
@@ -2870,11 +2701,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return thread_member returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") thread_member thread_member_get_sync(const snowflake thread_id, const snowflake user_id);
+thread_member thread_member_get_sync(const snowflake thread_id, const snowflake user_id);
 
 /**
  * @brief Get members of a thread
@@ -2884,11 +2714,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return thread_member_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") thread_member_map thread_members_get_sync(snowflake thread_id);
+thread_member_map thread_members_get_sync(snowflake thread_id);
 
 /**
  * @brief Create a thread in a forum or media channel
@@ -2905,11 +2734,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return thread returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") thread thread_create_in_forum_sync(const std::string& thread_name, snowflake channel_id, const message& msg, auto_archive_duration_t auto_archive_duration, uint16_t rate_limit_per_user, std::vector<snowflake> applied_tags = {});
+thread thread_create_in_forum_sync(const std::string& thread_name, snowflake channel_id, const message& msg, auto_archive_duration_t auto_archive_duration, uint16_t rate_limit_per_user, std::vector<snowflake> applied_tags = {});
 
 /**
  * @brief Create a thread
@@ -2926,11 +2754,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return thread returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") thread thread_create_sync(const std::string& thread_name, snowflake channel_id, uint16_t auto_archive_duration, channel_type thread_type, bool invitable, uint16_t rate_limit_per_user);
+thread thread_create_sync(const std::string& thread_name, snowflake channel_id, uint16_t auto_archive_duration, channel_type thread_type, bool invitable, uint16_t rate_limit_per_user);
 
 /**
  * @brief Edit a thread
@@ -2942,11 +2769,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return thread returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") thread thread_edit_sync(const thread &t);
+thread thread_edit_sync(const thread &t);
 
 /**
  * @brief Create a thread with a message (Discord: ID of a thread is same as message ID)
@@ -2961,11 +2787,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return thread returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") thread thread_create_with_message_sync(const std::string& thread_name, snowflake channel_id, snowflake message_id, uint16_t auto_archive_duration, uint16_t rate_limit_per_user);
+thread thread_create_with_message_sync(const std::string& thread_name, snowflake channel_id, snowflake message_id, uint16_t auto_archive_duration, uint16_t rate_limit_per_user);
 
 /**
  * @brief Add a member to a thread
@@ -2976,11 +2801,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation thread_member_add_sync(snowflake thread_id, snowflake user_id);
+confirmation thread_member_add_sync(snowflake thread_id, snowflake user_id);
 
 /**
  * @brief Remove a member from a thread
@@ -2991,11 +2815,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation thread_member_remove_sync(snowflake thread_id, snowflake user_id);
+confirmation thread_member_remove_sync(snowflake thread_id, snowflake user_id);
 
 /**
  * @brief Get the thread specified by thread_id. This uses the same call as dpp::cluster::channel_get but returns a thread object.
@@ -3005,11 +2828,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return thread returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") thread thread_get_sync(snowflake thread_id);
+thread thread_get_sync(snowflake thread_id);
 
 /**
  * @brief Edit current (bot) user.
@@ -3030,11 +2852,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  	 * @throw dpp::length_exception Image data is larger than the maximum size of 256 kilobytes
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") user current_user_edit_sync(const std::string &nickname, const std::string& avatar_blob = "", const image_type avatar_type = i_png, const std::string& banner_blob = "", const image_type banner_type = i_png);
+user current_user_edit_sync(const std::string &nickname, const std::string& avatar_blob = "", const image_type avatar_type = i_png, const std::string& banner_blob = "", const image_type banner_type = i_png);
 
 /**
  * @brief Get current (bot) application
@@ -3044,11 +2865,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return application returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") application current_application_get_sync();
+application current_application_get_sync();
 
 /**
  * @brief Get current (bot) user
@@ -3060,11 +2880,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * If you do not have these scopes, these fields are empty. You can safely convert a user_identified to user with `dynamic_cast`.
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") user_identified current_user_get_sync();
+user_identified current_user_get_sync();
 
 /**
  * @brief Set the bot's voice state on a stage channel
@@ -3089,11 +2908,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @throw std::logic_exception You attempted to set a request_to_speak_timestamp in the past which is not the value of 0.
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation current_user_set_voice_state_sync(snowflake guild_id, snowflake channel_id, bool suppress = false, time_t request_to_speak_timestamp = 0);
+confirmation current_user_set_voice_state_sync(snowflake guild_id, snowflake channel_id, bool suppress = false, time_t request_to_speak_timestamp = 0);
 
 /**
  * @brief Set a user's voice state on a stage channel
@@ -3117,11 +2935,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @param suppress True if the user's audio should be suppressed, false if it should not
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation user_set_voice_state_sync(snowflake user_id, snowflake guild_id, snowflake channel_id, bool suppress = false);
+confirmation user_set_voice_state_sync(snowflake user_id, snowflake guild_id, snowflake channel_id, bool suppress = false);
 
 /**
  * @brief Get current user's connections (linked accounts, e.g. steam, xbox).
@@ -3132,11 +2949,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return connection_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") connection_map current_user_connections_get_sync();
+connection_map current_user_connections_get_sync();
 
 /**
  * @brief Get current (bot) user guilds
@@ -3145,11 +2961,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return guild_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") guild_map current_user_get_guilds_sync();
+guild_map current_user_get_guilds_sync();
 
 /**
  * @brief Leave a guild
@@ -3159,11 +2974,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation current_user_leave_guild_sync(snowflake guild_id);
+confirmation current_user_leave_guild_sync(snowflake guild_id);
 
 /**
  * @brief Get a user by id, without using the cache
@@ -3178,11 +2992,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * Call `dpp::find_user` instead that looks up the user in the cache rather than a REST call.
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") user_identified user_get_sync(snowflake user_id);
+user_identified user_get_sync(snowflake user_id);
 
 /**
  * @brief Get a user by id, checking in the cache first
@@ -3197,11 +3010,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * where you want to for example resolve a user who may no longer be in the bot's guilds, for something like a ban log message.
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") user_identified user_get_cached_sync(snowflake user_id);
+user_identified user_get_cached_sync(snowflake user_id);
 
 /**
  * @brief Get all voice regions
@@ -3210,11 +3022,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return voiceregion_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") voiceregion_map get_voice_regions_sync();
+voiceregion_map get_voice_regions_sync();
 
 /**
  * @brief Get guild voice regions.
@@ -3229,14 +3040,13 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return voiceregion_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") voiceregion_map guild_get_voice_regions_sync(snowflake guild_id);
+voiceregion_map guild_get_voice_regions_sync(snowflake guild_id);
 
 
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") webhook create_webhook_sync(const class webhook &wh);
+webhook create_webhook_sync(const class webhook &wh);
 
 /**
  * @brief Delete a webhook
@@ -3247,11 +3057,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation delete_webhook_sync(snowflake webhook_id);
+confirmation delete_webhook_sync(snowflake webhook_id);
 
 /**
  * @brief Delete webhook message
@@ -3264,11 +3073,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation delete_webhook_message_sync(const class webhook &wh, snowflake message_id, snowflake thread_id = 0);
+confirmation delete_webhook_message_sync(const class webhook &wh, snowflake message_id, snowflake thread_id = 0);
 
 /**
  * @brief Delete webhook with token
@@ -3279,11 +3087,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return confirmation returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") confirmation delete_webhook_with_token_sync(snowflake webhook_id, const std::string &token);
+confirmation delete_webhook_with_token_sync(snowflake webhook_id, const std::string &token);
 
 /**
  * @brief Edit webhook
@@ -3294,11 +3101,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return webhook returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") webhook edit_webhook_sync(const class webhook& wh);
+webhook edit_webhook_sync(const class webhook& wh);
 
 /**
  * @brief Edit webhook message
@@ -3317,11 +3123,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return message returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message edit_webhook_message_sync(const class webhook &wh, const struct message &m, snowflake thread_id = 0);
+message edit_webhook_message_sync(const class webhook &wh, const struct message &m, snowflake thread_id = 0);
 
 /**
  * @brief Edit webhook with token (token is encapsulated in the webhook object)
@@ -3331,11 +3136,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return webhook returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") webhook edit_webhook_with_token_sync(const class webhook& wh);
+webhook edit_webhook_with_token_sync(const class webhook& wh);
 
 /**
  * @brief Execute webhook
@@ -3351,11 +3155,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @note If the webhook channel is a forum channel, you must provide either `thread_id` or `thread_name`. If `thread_id` is provided, the message will send in that thread. If `thread_name` is provided, a thread with that name will be created in the forum channel.
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message execute_webhook_sync(const class webhook &wh, const struct message &m, bool wait = false, snowflake thread_id = 0, const std::string& thread_name = "");
+message execute_webhook_sync(const class webhook &wh, const struct message &m, bool wait = false, snowflake thread_id = 0, const std::string& thread_name = "");
 
 /**
  * @brief Get channel webhooks
@@ -3365,11 +3168,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return webhook_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") webhook_map get_channel_webhooks_sync(snowflake channel_id);
+webhook_map get_channel_webhooks_sync(snowflake channel_id);
 
 /**
  * @brief Get guild webhooks
@@ -3379,11 +3181,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return webhook_map returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") webhook_map get_guild_webhooks_sync(snowflake guild_id);
+webhook_map get_guild_webhooks_sync(snowflake guild_id);
 
 /**
  * @brief Get webhook
@@ -3393,11 +3194,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return webhook returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") webhook get_webhook_sync(snowflake webhook_id);
+webhook get_webhook_sync(snowflake webhook_id);
 
 /**
  * @brief Get webhook message
@@ -3410,11 +3210,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return message returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") message get_webhook_message_sync(const class webhook &wh, snowflake message_id, snowflake thread_id = 0);
+message get_webhook_message_sync(const class webhook &wh, snowflake message_id, snowflake thread_id = 0);
 
 /**
  * @brief Get webhook using token
@@ -3425,11 +3224,10 @@ DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev
  * @return webhook returned object on completion
  * \memberof dpp::cluster
  * @throw dpp::rest_exception upon failure to execute REST function
- * @deprecated This function is deprecated, please use coroutines instead.
  * @warning This function is a blocking (synchronous) call and should only be used from within a separate thread.
  * Avoid direct use of this function inside an event handler.
  */
-DPP_DEPRECATED("Please use coroutines instead of sync functions: https://dpp.dev/coro-introduction.html") webhook get_webhook_with_token_sync(snowflake webhook_id, const std::string &token);
+webhook get_webhook_with_token_sync(snowflake webhook_id, const std::string &token);
 
 
 /* End of auto-generated definitions */
