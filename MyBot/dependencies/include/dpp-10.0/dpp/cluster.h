@@ -25,7 +25,6 @@
 #include <string>
 #include <map>
 #include <variant>
-#include <thread>
 #include <dpp/snowflake.h>
 #include <dpp/dispatcher.h>
 #include <dpp/misc-enum.h>
@@ -49,7 +48,6 @@
 #include <dpp/restresults.h>
 #include <dpp/event_router.h>
 #include <dpp/coro/async.h>
-#include <dpp/socketengine.h>
 
 namespace dpp {
 
@@ -168,23 +166,16 @@ class DPP_EXPORT cluster {
 #endif
 
 	/**
+	 * @brief Tick active timers
+	 */
+	void tick_timers();
+
+	/**
 	 * @brief Reschedule a timer for its next tick
 	 * 
 	 * @param t Timer to reschedule
 	 */
 	void timer_reschedule(timer_t* t);
-
-	/**
-	 * @brief Thread pool
-	 */
-	std::unique_ptr<thread_pool> pool{nullptr};
-
-	/**
-	 * @brief Used to spawn the socket engine into its own thread if
-	 * the cluster is started with dpp::st_return. It is unused otherwise.
-	 */
-	std::unique_ptr<std::thread> engine_thread{nullptr};
-
 public:
 	/**
 	 * @brief Current bot token for all shards on this cluster and all commands sent via HTTP
@@ -239,23 +230,14 @@ public:
 	websocket_protocol_t ws_mode;
 
 	/**
-	 * @brief Atomic bool to set to true when the cluster is terminating.
-	 *
-	 * D++ itself does not set this value, it is for library users to set if they want
-	 * the cluster to terminate outside of a flow where they may have simple access to
-	 * destruct the cluster object.
+	 * @brief Condition variable notified when the cluster is terminating.
 	 */
-	std::atomic_bool terminating{false};
+	std::condition_variable terminating;
 
 	/**
 	 * @brief The time (in seconds) that a request is allowed to take.
 	 */
-	uint16_t request_timeout = 60;
-
-	/**
-	 * @brief Socket engine instance
-	 */
-	std::unique_ptr<socket_engine_base> socketengine;
+	uint16_t request_timeout = 20;
 
 	/**
 	 * @brief Constructor for creating a cluster. All but the token are optional.
@@ -272,18 +254,6 @@ public:
 	 * @throw dpp::exception Thrown on windows, if WinSock fails to initialise, or on any other system if a dpp::request_queue fails to construct
 	 */
 	cluster(const std::string& token, uint32_t intents = i_default_intents, uint32_t shards = 0, uint32_t cluster_id = 0, uint32_t maxclusters = 1, bool compressed = true, cache_policy_t policy = cache_policy::cpol_default, uint32_t request_threads = 12, uint32_t request_threads_raw = 1);
-
-	/**
-	 * @brief Place some arbitrary work into the thread pool for execution when time permits.
-	 *
-	 * Work units are fetched into threads on the thread pool from the queue in order of priority,
-	 * lowest numeric values first. Low numeric values should be reserved for API replies from Discord,
-	 * guild creation events, etc.
-	 *
-	 * @param priority Priority of the work unit
-	 * @param task Task to queue
-	 */
-	void queue_work(int priority, work_unit task);
 
 	/**
 	 * @brief dpp::cluster is non-copyable
@@ -339,11 +309,6 @@ public:
 	 * @throw dpp::logic_exception If called after the cluster is started (this is not supported)
 	 */
 	cluster& set_websocket_protocol(websocket_protocol_t mode);
-
-	/**
-	 * @brief Tick active timers
-	 */
-	void tick_timers();
 
 	/**
 	 * @brief Set the audit log reason for the next REST call to be made.
@@ -2205,8 +2170,8 @@ public:
 	 * @note This method supports audit log reasons set by the cluster::set_audit_reason() method.
 	 * @param c Channel to set permissions for
 	 * @param overwrite_id Overwrite to change (a user or role ID)
-	 * @param allow allow permissions bitmask
-	 * @param deny deny permissions bitmask
+	 * @param allow Bitmask of allowed permissions (refer to enum dpp::permissions)
+	 * @param deny Bitmask of denied permissions (refer to enum dpp::permissions)
 	 * @param member true if the overwrite_id is a user id, false if it is a channel id
 	 * @param callback Function to call when the API call completes.
 	 * On success the callback will contain a dpp::confirmation object in confirmation_callback_t::value. On failure, the value is undefined and confirmation_callback_t::is_error() method will return true. You can obtain full error details with confirmation_callback_t::get_error().
@@ -2220,8 +2185,8 @@ public:
 	 * @note This method supports audit log reasons set by the cluster::set_audit_reason() method.
 	 * @param channel_id ID of the channel to set permissions for
 	 * @param overwrite_id Overwrite to change (a user or role ID)
-	 * @param allow allow permissions bitmask
-	 * @param deny deny permissions bitmask
+	 * @param allow Bitmask of allowed permissions (refer to enum dpp::permissions)
+	 * @param deny Bitmask of denied permissions (refer to enum dpp::permissions)
 	 * @param member true if the overwrite_id is a user id, false if it is a channel id
 	 * @param callback Function to call when the API call completes.
 	 * On success the callback will contain a dpp::confirmation object in confirmation_callback_t::value. On failure, the value is undefined and confirmation_callback_t::is_error() method will return true. You can obtain full error details with confirmation_callback_t::get_error().

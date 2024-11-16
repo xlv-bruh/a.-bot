@@ -130,8 +130,6 @@ struct http_connect_info {
 	uint16_t port;
 };
 
-using https_client_completion_event = std::function<void(class https_client*)>;
-
 /**
  * @brief Implements a HTTPS socket client based on the SSL client.
  * @note plaintext HTTP without SSL is also supported via a "downgrade" setting
@@ -235,12 +233,7 @@ public:
 	/**
 	 * @brief If true the response timed out while waiting
 	 */
-	bool timed_out;
-
-	/**
-	 * @brief Function to call when HTTP request is completed
-	 */
-	https_client_completion_event completed;
+	bool timed_out;	
 	
 	/**
 	 * @brief Connect to a specific HTTP(S) server and complete a request.
@@ -262,14 +255,13 @@ public:
 	 * @param plaintext_connection Set to true to make the connection plaintext (turns off SSL)
 	 * @param request_timeout How many seconds before the connection is considered failed if not finished
 	 * @param protocol Request HTTP protocol (default: 1.1)
-	 * @param done Function to call when https_client request is completed
 	 */
-        https_client(cluster* creator, const std::string &hostname, uint16_t port = 443, const std::string &urlpath = "/", const std::string &verb = "GET", const std::string &req_body = "", const http_headers& extra_headers = {}, bool plaintext_connection = false, uint16_t request_timeout = 5, const std::string &protocol = "1.1", https_client_completion_event done = {});
+        https_client(const std::string &hostname, uint16_t port = 443, const std::string &urlpath = "/", const std::string &verb = "GET", const std::string &req_body = "", const http_headers& extra_headers = {}, bool plaintext_connection = false, uint16_t request_timeout = 5, const std::string &protocol = "1.1");
 
 	/**
 	 * @brief Destroy the https client object
 	 */
-        virtual ~https_client();
+        virtual ~https_client() = default;
 
 	/**
 	 * @brief Build a multipart content from a set of files and some json
