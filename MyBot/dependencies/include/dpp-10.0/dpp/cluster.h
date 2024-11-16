@@ -48,6 +48,7 @@
 #include <dpp/restresults.h>
 #include <dpp/event_router.h>
 #include <dpp/coro/async.h>
+#include <dpp/socketengine.h>
 
 namespace dpp {
 
@@ -166,16 +167,18 @@ class DPP_EXPORT cluster {
 #endif
 
 	/**
-	 * @brief Tick active timers
-	 */
-	void tick_timers();
-
-	/**
 	 * @brief Reschedule a timer for its next tick
 	 * 
 	 * @param t Timer to reschedule
 	 */
 	void timer_reschedule(timer_t* t);
+
+	/**
+	 * @brief Thread pool
+	 */
+	std::unique_ptr<thread_pool> pool{nullptr};
+
+
 public:
 	/**
 	 * @brief Current bot token for all shards on this cluster and all commands sent via HTTP
@@ -240,6 +243,11 @@ public:
 	uint16_t request_timeout = 20;
 
 	/**
+	 * @brief Socket engine instance
+	 */
+	std::unique_ptr<socket_engine_base> socketengine;
+
+	/**
 	 * @brief Constructor for creating a cluster. All but the token are optional.
 	 * @param token The bot token to use for all HTTP commands and websocket connections
 	 * @param intents A bitmask of dpd::intents values for all shards on this cluster. This is required to be sent for all bots with over 100 servers.
@@ -254,6 +262,18 @@ public:
 	 * @throw dpp::exception Thrown on windows, if WinSock fails to initialise, or on any other system if a dpp::request_queue fails to construct
 	 */
 	cluster(const std::string& token, uint32_t intents = i_default_intents, uint32_t shards = 0, uint32_t cluster_id = 0, uint32_t maxclusters = 1, bool compressed = true, cache_policy_t policy = cache_policy::cpol_default, uint32_t request_threads = 12, uint32_t request_threads_raw = 1);
+
+	/**
+	 * @brief Place some arbitrary work into the thread pool for execution when time permits.
+	 *
+	 * Work units are fetched into threads on the thread pool from the queue in order of priority,
+	 * lowest numeric values first. Low numeric values should be reserved for API replies from Discord,
+	 * guild creation events, etc.
+	 *
+	 * @param priority Priority of the work unit
+	 * @param task Task to queue
+	 */
+	void queue_work(int priority, work_unit task);
 
 	/**
 	 * @brief dpp::cluster is non-copyable
@@ -309,6 +329,11 @@ public:
 	 * @throw dpp::logic_exception If called after the cluster is started (this is not supported)
 	 */
 	cluster& set_websocket_protocol(websocket_protocol_t mode);
+
+	/**
+	 * @brief Tick active timers
+	 */
+	void tick_timers();
 
 	/**
 	 * @brief Set the audit log reason for the next REST call to be made.
