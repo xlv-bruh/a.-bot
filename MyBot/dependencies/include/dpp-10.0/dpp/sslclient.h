@@ -27,6 +27,7 @@
 #include <ctime>
 #include <dpp/socket.h>
 #include <cstdint>
+#include <dpp/timer.h>
 
 namespace dpp {
 
@@ -64,6 +65,16 @@ bool close_socket(dpp::socket sfd);
  */
 bool set_nonblocking(dpp::socket sockfd, bool non_blocking);
 
+/* You'd think that we would get better performance with a bigger buffer, but SSL frames are 16k each.
+ * SSL_read in non-blocking mode will only read 16k at a time. There's no point in a bigger buffer as
+ * it'd go unused.
+ */
+constexpr uint16_t DPP_BUFSIZE{16 * 1024};
+
+/* Represents a failed socket system call, e.g. connect() failure */
+constexpr int ERROR_STATUS{-1};
+
+
 /**
  * @brief Implements a simple non-blocking SSL stream client.
  * 
@@ -78,6 +89,27 @@ private:
 	 * @brief Clean up resources
 	 */
 	void cleanup();
+
+	/**
+	 * @brief Start offset into internal ring buffer for client to server IO
+	 */
+	size_t client_to_server_length = 0;
+
+	/**
+	 * @brief Start offset into internal ring buffer for server to client IO
+	 */
+	size_t client_to_server_offset = 0;
+
+	/**
+	 * @brief Internal ring buffer for client to server IO
+	 */
+	char client_to_server_buffer[DPP_BUFSIZE];
+
+	/**
+	 * @brief Internal ring buffer for server to client IO
+	 */
+	char server_to_client_buffer[DPP_BUFSIZE];
+
 protected:
 	/**
 	 * @brief Input buffer received from socket
@@ -141,9 +173,14 @@ protected:
 	bool plaintext;
 
 	/**
-	 * @brief True if we are establishing a new connection, false if otherwise.
+	 * @brief True if connection is completed
 	 */
-	bool make_new;
+	bool connected{false};
+
+	/**
+	 * @brief Timer handle for one second timer
+	 */
+	timer timer_handle;
 
 
 	/**
@@ -156,6 +193,7 @@ protected:
 	 * @throw dpp::exception Failed to initialise connection
 	 */
 	virtual void connect();
+
 public:
 	/**
 	 * @brief Get the bytes out objectGet total bytes sent
@@ -208,6 +246,11 @@ public:
 	bool keepalive;
 
 	/**
+	 * @brief Owning cluster
+	 */
+	class cluster* owner;
+
+	/**
 	 * @brief Connect to a specified host and port. Throws std::runtime_error on fatal error.
 	 * @param _hostname The hostname to connect to
 	 * @param _port the Port number to connect to
@@ -217,7 +260,7 @@ public:
 	 * connection to non-Discord addresses such as within dpp::cluster::request().
 	 * @throw dpp::exception Failed to initialise connection
 	 */
-	ssl_client(const std::string &_hostname, const std::string &_port = "443", bool plaintext_downgrade = false, bool reuse = false);
+	ssl_client(cluster* creator, const std::string &_hostname, const std::string &_port = "443", bool plaintext_downgrade = false, bool reuse = false);
 
 	/**
 	 * @brief Nonblocking I/O loop
@@ -256,6 +299,14 @@ public:
 	 * @param msg Log message to send
 	 */
 	virtual void log(dpp::loglevel severity, const std::string &msg) const;
+
+	void complete_handshake(const struct socket_events* ev);
+
+	void on_read(dpp::socket fd, const struct dpp::socket_events& ev);
+
+	void on_write(dpp::socket fd, const struct dpp::socket_events& e);
+
+	void on_error(dpp::socket fd, const struct dpp::socket_events&, int error_code);
 };
 
 }
