@@ -27,6 +27,7 @@
 #include <ctime>
 #include <dpp/socket.h>
 #include <cstdint>
+#include <dpp/timer.h>
 
 namespace dpp {
 
@@ -53,7 +54,7 @@ typedef std::function<void()> socket_notification_t;
  * @param sfd Socket to close
  * @return false on error, true on success
  */
-bool close_socket(dpp::socket sfd);
+DPP_EXPORT bool close_socket(dpp::socket sfd);
 
 /**
  * @brief Set a socket to blocking or non-blocking IO
@@ -62,7 +63,17 @@ bool close_socket(dpp::socket sfd);
  * @param non_blocking should socket be non-blocking?
  * @return false on error, true on success
  */
-bool set_nonblocking(dpp::socket sockfd, bool non_blocking);
+DPP_EXPORT bool set_nonblocking(dpp::socket sockfd, bool non_blocking);
+
+/* You'd think that we would get better performance with a bigger buffer, but SSL frames are 16k each.
+ * SSL_read in non-blocking mode will only read 16k at a time. There's no point in a bigger buffer as
+ * it'd go unused.
+ */
+constexpr uint16_t DPP_BUFSIZE{16 * 1024};
+
+/* Represents a failed socket system call, e.g. connect() failure */
+constexpr int ERROR_STATUS{-1};
+
 
 /**
  * @brief Implements a simple non-blocking SSL stream client.
@@ -78,6 +89,27 @@ private:
 	 * @brief Clean up resources
 	 */
 	void cleanup();
+
+	/**
+	 * @brief Start offset into internal ring buffer for client to server IO
+	 */
+	size_t client_to_server_length = 0;
+
+	/**
+	 * @brief Start offset into internal ring buffer for server to client IO
+	 */
+	size_t client_to_server_offset = 0;
+
+	/**
+	 * @brief Internal ring buffer for client to server IO
+	 */
+	char client_to_server_buffer[DPP_BUFSIZE];
+
+	/**
+	 * @brief Internal ring buffer for server to client IO
+	 */
+	char server_to_client_buffer[DPP_BUFSIZE];
+
 protected:
 	/**
 	 * @brief Input buffer received from socket
@@ -88,12 +120,6 @@ protected:
 	 * @brief Output buffer for sending to socket
 	 */
 	std::string obuffer;
-
-	/**
-	 * @brief True if in nonblocking mode. The socket switches to nonblocking mode
-	 * once ReadLoop is called.
-	 */
-	bool nonblocking;
 
 	/**
 	 * @brief Raw file descriptor of connection
@@ -114,6 +140,16 @@ protected:
 	 * @brief For timers
 	 */
 	time_t last_tick;
+
+	/**
+	 * @brief Start time of connection
+	 */
+	time_t start;
+
+	/**
+	 * @brief How many times we retried connect()
+	 */
+	uint8_t connect_retries{0};
 
 	/**
 	 * @brief Hostname connected to
@@ -141,10 +177,28 @@ protected:
 	bool plaintext;
 
 	/**
-	 * @brief True if we are establishing a new connection, false if otherwise.
+	 * @brief True if connection is completed
 	 */
-	bool make_new;
+	bool connected{false};
 
+	/**
+	 * @brief True if tcp connect() succeeded
+	 */
+	bool tcp_connect_done{false};
+
+	/**
+	 * @brief Timer handle for one second timer
+	 */
+	timer timer_handle;
+
+	/**
+	 * @brief Unique ID of socket used as a nonce
+	 * You can use this to identify requests vs reply
+	 * if you want. D++ itself only sets this, and does
+	 * not use it in any logic. It starts at 1 and increments
+	 * for each request made.
+	 */
+	uint64_t unique_id;
 
 	/**
 	 * @brief Called every second
@@ -156,6 +210,7 @@ protected:
 	 * @throw dpp::exception Failed to initialise connection
 	 */
 	virtual void connect();
+
 public:
 	/**
 	 * @brief Get the bytes out objectGet total bytes sent
@@ -168,6 +223,14 @@ public:
 	 * @return uint64_t bytes received
 	 */
 	uint64_t get_bytes_in();
+
+	/**
+	 * @brief Every request made has a unique ID. This increments
+	 * for every request, starting at 1. You can use this for statistics,
+	 * or to associate requests and replies in external event loops.
+	 * @return Unique ID
+	 */
+	uint64_t get_unique_id() const;
 
 	/**
 	 * @brief Get SSL cipher name
@@ -208,6 +271,11 @@ public:
 	bool keepalive;
 
 	/**
+	 * @brief Owning cluster
+	 */
+	class cluster* owner;
+
+	/**
 	 * @brief Connect to a specified host and port. Throws std::runtime_error on fatal error.
 	 * @param _hostname The hostname to connect to
 	 * @param _port the Port number to connect to
@@ -217,7 +285,7 @@ public:
 	 * connection to non-Discord addresses such as within dpp::cluster::request().
 	 * @throw dpp::exception Failed to initialise connection
 	 */
-	ssl_client(const std::string &_hostname, const std::string &_port = "443", bool plaintext_downgrade = false, bool reuse = false);
+	ssl_client(cluster* creator, const std::string &_hostname, const std::string &_port = "443", bool plaintext_downgrade = false, bool reuse = false);
 
 	/**
 	 * @brief Nonblocking I/O loop
@@ -256,6 +324,14 @@ public:
 	 * @param msg Log message to send
 	 */
 	virtual void log(dpp::loglevel severity, const std::string &msg) const;
+
+	void complete_handshake(const struct socket_events* ev);
+
+	void on_read(dpp::socket fd, const struct dpp::socket_events& ev);
+
+	void on_write(dpp::socket fd, const struct dpp::socket_events& e);
+
+	void on_error(dpp::socket fd, const struct dpp::socket_events&, int error_code);
 };
 
 }
