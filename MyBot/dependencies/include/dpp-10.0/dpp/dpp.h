@@ -37,7 +37,6 @@
 #include <dpp/misc-enum.h>
 #include <dpp/stringops.h>
 #include <dpp/managed.h>
-#include <dpp/socketengine.h>
 #include <dpp/utility.h>
 #include <dpp/voicestate.h>
 #include <dpp/permissions.h>
@@ -76,4 +75,3 @@
 #include <dpp/timed_listener.h>
 #include <dpp/collector.h>
 #include <dpp/bignum.h>
-#include <dpp/thread_pool.h>
