@@ -44,7 +44,6 @@ struct awaitable_dummy {
 #include <type_traits>
 #include <exception>
 #include <atomic>
-#include <condition_variable>
 
 namespace dpp {
 
